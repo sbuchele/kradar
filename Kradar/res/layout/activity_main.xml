@@ -20,6 +20,6 @@
         android:layout_alignBaseline="@+id/textView2"
         android:layout_alignBottom="@+id/textView2"
         android:layout_alignLeft="@+id/textView2"
-        android:text="Welcom to Kradar, Kill enemies with your friends" />
+        android:text="@string/introScreen" />
 
 </RelativeLayout>
