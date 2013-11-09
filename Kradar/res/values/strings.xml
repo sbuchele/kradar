@@ -4,6 +4,6 @@
     <string name="app_name">Kradar</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-	<string name="introScreen">Welcome to Kradar, Kill enemies with your friends</string>
+	<string name="introScreen">Welcome to Kradar, Kill enemies with your friends help</string>
     
 </resources>
