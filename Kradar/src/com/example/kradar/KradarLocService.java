@@ -41,7 +41,7 @@ GooglePlayServicesClient.OnConnectionFailedListener,
 	
 	public static Fluffles fluffy;
 	static Thread fluffyThread;
-	
+	final public String PHONE_NUMBER = "com.example.kradar.PhoneNumber" ;
 	
     @Override
 	public void onCreate() {
@@ -75,6 +75,17 @@ GooglePlayServicesClient.OnConnectionFailedListener,
         
         Context ctx = getApplicationContext();
 		prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
+		
+		//to do
+		SharedPreferences Phone = PreferenceManager.getDefaultSharedPreferences(this);
+		if (Phone.getString(PHONE_NUMBER, null) == "")
+		{	
+			Phone.edit().putString(PHONE_NUMBER, "");
+		}
+		
+		KradarLocService.fluffy.tophat.setPhone(Phone.getString(PHONE_NUMBER, ""));
+		//KradarLocService.fluffy.tophat.setPhone("3");
+		KradarLocService.fluffy.poke();
 		
 		Toast.makeText(this, "created", Toast.LENGTH_SHORT).show();
     }

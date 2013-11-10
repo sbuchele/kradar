@@ -64,7 +64,7 @@ public class MainActivity extends FragmentActivity
 	//		}
 	//	}
 
-	final public String PHONE_NUMBER = "com.example.kradar.PhoneNumber" ;
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -74,14 +74,8 @@ public class MainActivity extends FragmentActivity
 		
 		startService(new Intent(this, KradarLocService.class));
 		
-		//to do
-		SharedPreferences Phone = PreferenceManager.getDefaultSharedPreferences(this);
-		if (Phone.getString(PHONE_NUMBER, null) == "")
-		{	
-			Phone.edit().putString(PHONE_NUMBER, "");
-		}
-		KradarLocService.fluffy.tophat.setPhone(Phone.getString(PHONE_NUMBER, ""));
-		KradarLocService.fluffy.poke();
+		
+		
 		
 		//button creation and implementation
 		Button b1 = (Button) findViewById(R.id.attack);
