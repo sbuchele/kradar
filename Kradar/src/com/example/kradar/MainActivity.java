@@ -67,11 +67,7 @@ public class MainActivity extends FragmentActivity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		c=new Controller();
-			 
-		//if(Fluffles.Messenger. == false)
-		//{
-			
-		//}
+		
 		
 		//button creation and implementation
 		Button b1 = (Button) findViewById(R.id.attack);
@@ -96,6 +92,12 @@ public class MainActivity extends FragmentActivity
 	{
 		super.onStart();
 		startService(new Intent(this, KradarLocService.class));
+	
+
+		//if(Fluffles.Messenger. == false)
+		//{
+			
+		//}
 	}
 
 
