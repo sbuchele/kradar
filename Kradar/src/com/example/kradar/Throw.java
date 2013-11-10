@@ -18,6 +18,10 @@ public class Throw extends FragmentActivity {
 		EditText entry=(EditText) findViewById(R.id.phone_number);
 		phoneNum=entry.getText().toString();
 		
+		String prev=Controller.pref.getString(Controller.FRIEND_NO, "");
+		prev+=" "+phoneNum;
+		Controller.pref.edit().putString(Controller.FRIEND_NO, prev);
+		
 		Button b1 = (Button) findViewById(R.id.entor);
 		b1.setOnClickListener(Click1());
 	}	 
