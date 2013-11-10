@@ -12,9 +12,9 @@ import android.widget.EditText;
 
 public class New extends FragmentActivity {
 private String phoneNum;
-SharedPreferences Phone = PreferenceManager.getDefaultSharedPreferences(this);
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		SharedPreferences Phone = PreferenceManager.getDefaultSharedPreferences(this);
 		setContentView(R.layout.adder);
 		EditText entry=(EditText) findViewById(R.id.phone_number);
 		phoneNum=entry.getText().toString();
