@@ -1,5 +1,7 @@
 package com.example.kradar;
 
+import java.util.ArrayList;
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -63,6 +65,9 @@ LocationListener  {
 		setContentView(R.layout.activity_main);
 		c=new Controller();
 
+		ArrayList<String> Hats = new ArrayList<String>();
+			 
+		
 		//button creation and implementation
 		Button b1 = (Button) findViewById(R.id.attack);
 		Button b2 = (Button) findViewById(R.id.Friends);
@@ -237,7 +242,7 @@ LocationListener  {
 			@Override
 			public void onClick(View V)
 			{
-				
+				Intent intent = new Intent(MainActivity.this, Throw.class);
 			}
 			
 		};
