@@ -11,6 +11,8 @@ public class Hats
 	private double lat;
 	private double lon;
 	private double [] dist;
+	private boolean getPower;
+	private int powerLevel = 0;
 	
 	public Hats()
 	{	
@@ -85,7 +87,20 @@ public class Hats
 	public synchronized void setPhone(String phone){
 		this.phone = phone;
 	}
-
-
+	public synchronized void getPower(){
+		this.getPower = true;
+	}
+	public synchronized void noPower(){
+		this.getPower = false;
+	}
+	public synchronized boolean wantPower(){
+		return this.getPower;
+	}
+	public synchronized int powerLevel(){
+		return this.powerLevel();
+	}
+	public synchronized void setPower(int p){
+		this.powerLevel = p;
+	}
 
 }
