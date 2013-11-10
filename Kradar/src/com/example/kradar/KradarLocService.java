@@ -26,7 +26,7 @@ GooglePlayServicesClient.OnConnectionFailedListener,
 	public final static String LOCATION_INTENT="com.example.kradar.Return Loc";
 	public final static String LOCATION_EXTRA="com.example.kradar.location";
 	public final static String POWER="com.example.kradar.powerlevel";
-	private SharedPreferences prefs;
+	private SharedPreferences prefs=Controller.pref;
     private LocationClient mLocationClient;
     private LocationRequest mLocationRequest;
     // Flag that indicates if a request is underway.

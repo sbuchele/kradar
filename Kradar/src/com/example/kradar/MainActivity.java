@@ -20,7 +20,6 @@ public class MainActivity extends FragmentActivity
 //LocationListener  
 {
 
-	Controller c;
 	final public static String PHONE_NUMBER = "com.example.kradar.PhoneNumber" ;
 	static boolean first = false;
 
@@ -28,10 +27,11 @@ public class MainActivity extends FragmentActivity
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		c=new Controller();
+		
 
 		SharedPreferences Phone1 = PreferenceManager.getDefaultSharedPreferences(this);
-
+		Controller.setSharedPreferences(Phone1);
+		
 		if (Phone1.getString(PHONE_NUMBER, "").equals("") && first == false)
 		{				
 			Intent intent = new Intent(MainActivity.this, New.class);
@@ -64,14 +64,13 @@ public class MainActivity extends FragmentActivity
 	public void onStart()
 	{
 		super.onStart();
-		SharedPreferences Phone1 = PreferenceManager.getDefaultSharedPreferences(this);
-		KradarLocService.fluffy.tophat.setPhone(Phone1.getString(PHONE_NUMBER, ""));
+		KradarLocService.fluffy.tophat.setPhone(Controller.pref.getString(PHONE_NUMBER, ""));
 		KradarLocService.fluffy.poke();
 
 	}
 	public OnClickListener Click1()
 	{
-		SharedPreferences Power= PreferenceManager.getDefaultSharedPreferences(this);
+		SharedPreferences Power= Controller.pref;
 		OnClickListener click = new OnClickListener()
 		{
 			@Override

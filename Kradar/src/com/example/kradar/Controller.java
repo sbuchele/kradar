@@ -1,5 +1,6 @@
 package com.example.kradar;
 
+import android.content.SharedPreferences;
 import android.telephony.TelephonyManager;
 
 /**
@@ -11,6 +12,11 @@ public class Controller {
 		
 
 	}/*/
+	public static SharedPreferences pref;
+	
+	public static void setSharedPreferences(SharedPreferences prefer){
+		pref=prefer;
+	}
 	
 	
 	public static String toBase32(int num10){
