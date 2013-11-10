@@ -60,13 +60,6 @@ public class MainActivity extends FragmentActivity
 		
 		startService(new Intent(this, KradarLocService.class));
 		
-		
-		
-		//KradarLocService.fluffy.tophat.setPhone(Phone.getString(PHONE_NUMBER, ""));
-		KradarLocService.fluffy.tophat.setPhone("3");
-		KradarLocService.fluffy.poke();
-		
-		
 		//button creation and implementation
 		Button b1 = (Button) findViewById(R.id.attack);
 		Button b2 = (Button) findViewById(R.id.Friends);
