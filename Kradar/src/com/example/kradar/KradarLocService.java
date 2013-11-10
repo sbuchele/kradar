@@ -142,12 +142,16 @@ GooglePlayServicesClient.OnConnectionFailedListener,
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
         
         fluffy.tophat.setLat(arg0.getLatitude());
+        fluffy.poke();
+        
        	fluffy.tophat.setLon(arg0.getLongitude());
         fluffy.poke();
         
+        fluffy.tophat.wantPower();//TODO?
         int power=prefs.getInt(POWER, 0);
+        power+=fluffy.tophat.powerLevel();
         prefs.edit().putInt(POWER, power);
-        prefs.edit().commit();///TODO get power information
+        prefs.edit().commit();
 		}
 	}
 
