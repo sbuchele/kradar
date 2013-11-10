@@ -35,6 +35,7 @@ public class Fluffles implements Runnable {//Server/Client code
         boolean waitForPower = false;
 		try {
 			InetAddress serverAddr = InetAddress.getByName(serverIpAddress);
+			System.out.println("DOING STUFF");
             Log.d("ClientActivity", "C: Connecting...");
             Socket socket = new Socket(serverAddr, port);
             connected = true;
