@@ -24,10 +24,10 @@ public class PopUp extends DialogFragment{
                    public void onClick(DialogInterface dialog, int id) {
                 	   EditText entry=(EditText) ((Dialog) dialog).findViewById(R.id.text_entry);
                 	   try{
-                		   int newLife=Integer.parseInt(entry.getText().toString());
-                		   mListener.onSetLifePositiveClick(PopUp.this, newLife);
+                		   String newLife=entry.getText().toString();
+                		   mListener.onPositiveClick(PopUp.this, newLife);
                 	   }catch(Exception e){
-                		   mListener.onSetLifeNegativeClick(PopUp.this);
+                		   mListener.onNegativeClick(PopUp.this);
                 	   }
                 	   
                 	   
@@ -35,7 +35,7 @@ public class PopUp extends DialogFragment{
                })
                .setNegativeButton(R.string.cansel, new DialogInterface.OnClickListener() {
                    public void onClick(DialogInterface dialog, int id) {
-                	   mListener.onSetLifeNegativeClick(PopUp.this);
+                	   mListener.onNegativeClick(PopUp.this);
                    }
                });
         // Create the AlertDialog object and return it
@@ -43,8 +43,8 @@ public class PopUp extends DialogFragment{
     }
     
     public interface NoticeDialogListener {
-        public void onSetLifePositiveClick(DialogFragment dialog, int newlife);
-        public void onSetLifeNegativeClick(DialogFragment dialog);
+        public void onPositiveClick(DialogFragment dialog, String phoney);
+        public void onNegativeClick(DialogFragment dialog);
     }
     
     // Use this instance of the interface to deliver action events

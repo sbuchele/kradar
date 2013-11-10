@@ -22,7 +22,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.LocalBroadcastManager;
 import android.widget.Toast;
 
-public class KradarLocService extends Service implements
+public class KradarLocService extends Service implements PopUp.NoticeDialogListener,
 GooglePlayServicesClient.ConnectionCallbacks,
 GooglePlayServicesClient.OnConnectionFailedListener,
 	LocationListener{
@@ -43,7 +43,7 @@ GooglePlayServicesClient.OnConnectionFailedListener,
 	
 	public static Fluffles fluffy;
 	static Thread fluffyThread;
-	final public String PHONE_NUMBER = "com.example.kradar.PhoneNumber" ;
+	
 	
     @Override
 	public void onCreate() {
@@ -81,17 +81,6 @@ GooglePlayServicesClient.OnConnectionFailedListener,
 		
 		//Grab Phone Number send to Serv.
 		//to do
-		SharedPreferences Phone = PreferenceManager.getDefaultSharedPreferences(this);
-		if (Phone.getString(PHONE_NUMBER, null) == "")
-		{	
-			DialogFragment newFrag = new PopUp();
-			newFrag.show(getSupportFragmentManager(), "");
-			Phone.edit().putString(PHONE_NUMBER, "");
-		}
-		
-		//KradarLocService.fluffy.tophat.setPhone(Phone.getString(PHONE_NUMBER, ""));
-		KradarLocService.fluffy.tophat.setPhone("3");
-		KradarLocService.fluffy.poke();
 		
 		
 		Toast.makeText(this, "created", Toast.LENGTH_SHORT).show();
@@ -183,6 +172,18 @@ GooglePlayServicesClient.OnConnectionFailedListener,
         }
         super.onDestroy();  
     }
+
+	@Override
+	public void onPositiveClick(DialogFragment dialog, String phoney) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onNegativeClick(DialogFragment dialog) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 	
