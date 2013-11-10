@@ -6,6 +6,8 @@
 .project
 .metadata
 bin/
+Krader/bin/classes/
+Krader/gen/
 tmp/
 *.tmp
 *.bak
