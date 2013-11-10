@@ -47,6 +47,7 @@ GooglePlayServicesClient.OnConnectionFailedListener,
 	public void onCreate() {
         super.onCreate();
         
+        Toast.makeText(this, "created1", Toast.LENGTH_SHORT).show();
  
         mInProgress = false;
         // Create the LocationRequest object
@@ -74,6 +75,8 @@ GooglePlayServicesClient.OnConnectionFailedListener,
         
         Context ctx = getApplicationContext();
 		prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
+		
+		Toast.makeText(this, "created", Toast.LENGTH_SHORT).show();
     }
 	
     private boolean servicesConnected() {
