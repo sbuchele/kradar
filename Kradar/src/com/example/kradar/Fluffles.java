@@ -43,7 +43,6 @@ public class Fluffles implements Runnable {//Server/Client code
                     .getOutputStream())), true);
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             while (connected) {
-            	wait(500);
             	try {
 					dialogue = in.readLine();
 				} catch (Exception e) {
