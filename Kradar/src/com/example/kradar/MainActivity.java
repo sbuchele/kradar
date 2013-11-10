@@ -32,12 +32,12 @@ public class MainActivity extends FragmentActivity
 		SharedPreferences Phone1 = PreferenceManager.getDefaultSharedPreferences(this);
 		Controller.setSharedPreferences(Phone1);
 		
-		if (Phone1.getString(PHONE_NUMBER, "").equals("") && first == false)
-		{				
-			Intent intent = new Intent(MainActivity.this, New.class);
-			MainActivity.this.startActivity(intent);
-
-		}
+//		if (Phone1.getString(PHONE_NUMBER, "").equals("") && first == false)
+//		{				
+//			Intent intent = new Intent(MainActivity.this, New.class);
+//			MainActivity.this.startActivity(intent);
+//
+//		}
 
 		startService(new Intent(this, KradarLocService.class));
 
@@ -64,8 +64,13 @@ public class MainActivity extends FragmentActivity
 	public void onStart()
 	{
 		super.onStart();
+<<<<<<< HEAD
 		KradarLocService.fluffy.tophat.setPhone(Controller.pref.getString(PHONE_NUMBER, "3"));
 		KradarLocService.fluffy.poke();
+=======
+//		KradarLocService.fluffy.tophat.setPhone(Controller.pref.getString(PHONE_NUMBER, "3"));
+//		KradarLocService.fluffy.poke();
+>>>>>>> 7d18eefb672991e393a0a2dc72d8798b34ce282f
 
 	}
 	public OnClickListener Click1()
@@ -90,7 +95,7 @@ public class MainActivity extends FragmentActivity
 			@Override
 			public void onClick(View V)
 			{
-				Intent intent = new Intent(MainActivity.this, F_list.class);
+				Intent intent = new Intent(MainActivity.this, Login.class);
 				MainActivity.this.startActivity(intent);
 			}
 
