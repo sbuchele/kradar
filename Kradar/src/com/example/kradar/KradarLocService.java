@@ -38,6 +38,9 @@ GooglePlayServicesClient.OnConnectionFailedListener,
 		super();
 		
 	}
+	
+	private static Fluffles fluffy;
+	static Thread fluffyThread;
     
     @Override
 	public void onCreate() {
@@ -55,6 +58,12 @@ GooglePlayServicesClient.OnConnectionFailedListener,
         mLocationRequest.setFastestInterval(1000);//*30*5);
         
         servicesAvailable = servicesConnected();
+        
+        fluffy = new Fluffles();
+        //Put the phone's ID in fluffy's hat
+        fluffyThread = new Thread(fluffy);
+        fluffyThread.start();
+        
         
         /*
          * Create a new location client, using the enclosing class to
