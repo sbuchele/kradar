@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
+import android.widget.Toast;
 
 public class KradarLocService extends Service implements 
 GooglePlayServicesClient.ConnectionCallbacks,
@@ -50,9 +51,9 @@ GooglePlayServicesClient.OnConnectionFailedListener,
         // Use moderately high accuracy
         mLocationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
         // Set the update interval to 5 min
-        mLocationRequest.setInterval(1000*60*5);
+        mLocationRequest.setInterval(1000);//*60*5);
         // Set the fastest update interval to 2.5 min
-        mLocationRequest.setFastestInterval(1000*30*5);
+        mLocationRequest.setFastestInterval(1000);//*30*5);
         
         servicesAvailable = servicesConnected();
         
@@ -109,7 +110,11 @@ GooglePlayServicesClient.OnConnectionFailedListener,
 	@Override
 	public void onLocationChanged(Location arg0) {
 		// TODO Auto-generated method stub
-		
+		 // Report to the UI that the location was updated
+        String msg = "Updated Location: " +
+                Double.toString(arg0.getLatitude()) + "," +
+                Double.toString(arg0.getLongitude());
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
 	}
 
 	@Override
