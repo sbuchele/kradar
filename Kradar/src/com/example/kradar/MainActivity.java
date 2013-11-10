@@ -71,7 +71,9 @@ public class MainActivity extends FragmentActivity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		c=new Controller();
-
+		
+		startService(new Intent(this, KradarLocService.class));
+		
 		//to do
 		SharedPreferences Phone = PreferenceManager.getDefaultSharedPreferences(this);
 		if (Phone.getString(PHONE_NUMBER, null) == "")
@@ -89,7 +91,7 @@ public class MainActivity extends FragmentActivity
 		b2.setOnClickListener(Click2());
 		b3.setOnClickListener(Click3());
 
-		startService(new Intent(this, KradarLocService.class));
+		
 	}
 
 
