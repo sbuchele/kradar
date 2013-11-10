@@ -96,16 +96,19 @@ public class Fluffles implements Runnable {//Server/Client code
 							out.println("Have num");
 							out.flush();
 							saidThing = true;
+							tophat.setDual(null);
 						}
 						else if(sayLong){
 							out.println("Have long");
 							out.flush();
 							saidThing = true;
+							tophat.setLon(-1);
 						}
 						else if(sayLat){
 							out.println("Have lat");
 							out.flush();
 							saidThing = true;
+							tophat.setLat(-1);
 						}
 					}
                 }
