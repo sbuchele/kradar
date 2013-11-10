@@ -15,6 +15,13 @@ import android.util.Log;
 public class Fluffles extends Activity {//Server/Client code
 
 	public Hats tophat = new Hats();
+	private boolean canSpeak = true;
+	String toSpeak = null;
+	boolean sayNum = false;
+	boolean sayLat = false;
+	boolean sayLong = false;
+	boolean sayID = false;
+	
 	public class Messenger implements Runnable{
 
 	@Override
@@ -34,7 +41,7 @@ public class Fluffles extends Activity {//Server/Client code
                     .getOutputStream())), true);
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             while (connected) {
-            	
+            	wait(500);
             	try {
 					dialogue = in.readLine();
 				} catch (Exception e) {
@@ -45,6 +52,7 @@ public class Fluffles extends Activity {//Server/Client code
             	}
             	else hasStuff = false;
                 if (hasStuff) {
+                	this.speakToggleOff();
 					if(dialogue == "Send Contacts"){
 						//Initiate contact transmission procedure
 					}
@@ -77,8 +85,34 @@ public class Fluffles extends Activity {//Server/Client code
             connected = false;
         }
     }
-	public void poke(Hats hat){
-		//if(hat.)
+	private synchronized void speakToggleOff(){
+		canSpeak = false;
+	}
+	public synchronized void poke(){
+		while(toSpeak != null){
+			try {
+				this.wait(100);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		if(tophat.getPhone() != null){
+			toSpeak = tophat.getPhone();
+			sayID = true;
+		}
+		else if(tophat.getDual() != null){
+			toSpeak = tophat.getDual();
+			sayNum = true;
+		}
+		else if(tophat.getLat() != -1){
+			toSpeak = String.valueOf(tophat.getLat());
+			sayLat = true;
+		}
+		else if(tophat.getLon() != -1){
+			toSpeak = String.valueOf(tophat.getLon());
+			sayLong = true;
+		}
 	}
 	}
 }
