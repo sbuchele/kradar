@@ -1,6 +1,10 @@
 package com.example.kradar;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesClient;
+
 import android.location.Location;
+
 import android.location.LocationListener;
 import android.os.Bundle;
 import android.app.Activity;
@@ -131,7 +135,29 @@ LocationListener  {
             }
         }
     }
+    
+    /*
+     * Called by Location Services when the request to connect the
+     * client finishes successfully. At this point, you can
+     * request the current location or start periodic updates
+     */
+    @Override
+    public void onConnected(Bundle dataBundle) {
+        // Display the connection status
+        Toast.makeText(this, "Connected", Toast.LENGTH_SHORT).show();
 
+    }
+    
+    /*
+     * Called by Location Services if the connection to the
+     * location client drops because of an error.
+     */
+    @Override
+    public void onDisconnected() {
+        // Display the connection status
+        Toast.makeText(this, "Disconnected. Please re-connect.",
+                Toast.LENGTH_SHORT).show();
+    }
 
 	@Override
 	public void onLocationChanged(Location location) {
@@ -156,6 +182,13 @@ LocationListener  {
 
 	@Override
 	public void onStatusChanged(String provider, int status, Bundle extras) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void onConnectionFailed(ConnectionResult arg0) {
 		// TODO Auto-generated method stub
 		
 	}
