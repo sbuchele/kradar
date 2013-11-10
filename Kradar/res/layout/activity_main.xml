@@ -31,6 +31,7 @@
 
     <Button
         android:id="@+id/attack"
+        android:background="@drawable/dark_button"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_alignLeft="@+id/textView2"
@@ -48,6 +49,7 @@
 
     <Button
         android:id="@+id/Friends"
+        android:background="@drawable/heal_button"
         android:layout_width="145dp"
         android:layout_height="100dp"
         android:layout_alignLeft="@+id/attack"
@@ -56,6 +58,7 @@
 
     <Button
         android:id="@+id/add"
+        android:background="@drawable/heal_button"
         android:layout_width="145dp"
         android:layout_height="100dp"
         android:layout_alignRight="@+id/attack"
