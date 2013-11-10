@@ -8,4 +8,5 @@
  	<string name="Friends">Friends be here</string>
  	<string name="Updates">ADD Friends</string>
 	<string name="Charge">Charge Bar</string>
+	<string name="info_add">Please insert your friends phone number below</string>
 </resources>

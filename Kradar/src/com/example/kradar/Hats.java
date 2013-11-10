@@ -2,19 +2,24 @@ package com.example.kradar;
 
 public class Hats 
 {
+
 	boolean namer;
 	int damage;
-	String name;
+	final String phone;
 	int distance;
-	int phone;
+	String dual;
+	double lat;
+	double lon;
+	double [] dist;
 	
 	public Hats()
 	{	
+		
 		namer = false;
 		damage = -1;
-		name = "-1";
+		dual = null;
 		distance = -1;
-		phone = -1;
+		phone = null;
 	}
 
 	public boolean isNamer() {
@@ -33,14 +38,7 @@ public class Hats
 		this.damage = damage;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
+	
 	public int getDistance() {
 		return distance;
 	}
@@ -49,12 +47,42 @@ public class Hats
 		this.distance = distance;
 	}
 
-	public int getPhone() {
+	public String getDual() {
+		return dual;
+	}
+
+	public void setDual(String dual) {
+		this.dual = dual;
+	}
+
+	public double getLat() {
+		return lat;
+	}
+
+	public void setLat(double lat) {
+		this.lat = lat;
+	}
+
+	public double getLon() {
+		return lon;
+	}
+
+	public void setLon(double lon) {
+		this.lon = lon;
+	}
+
+	public double[] getDist() {
+		return dist;
+	}
+
+	public void setDist(double[] dist) {
+		this.dist = dist;
+	}
+
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(int phone) {
-		this.phone = phone;
-	}
+
 
 }

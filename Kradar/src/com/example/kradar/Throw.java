@@ -6,9 +6,11 @@ import android.support.v4.app.FragmentActivity;
 public class Throw extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-	
-	
-	
+		setContentView(R.layout.adder);
+
+		
+		Hats tricorn = new Hats();
+		
+
 	}
 }
