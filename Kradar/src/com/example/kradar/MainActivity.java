@@ -244,7 +244,8 @@ public class MainActivity extends FragmentActivity
 			@Override
 			public void onClick(View V)
 			{
-				
+				Intent intent = new Intent(MainActivity.this, F_list.class);
+				MainActivity.this.startActivity(intent);
 			}
 			
 		};
@@ -259,9 +260,10 @@ public class MainActivity extends FragmentActivity
 			public void onClick(View V)
 			{
 				Intent intent = new Intent(MainActivity.this, Throw.class);
-			}
-			
+				MainActivity.this.startActivity(intent);
+			}			
 		};
+		
 		return click;
 	}
 
