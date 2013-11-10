@@ -23,6 +23,7 @@ public class Fluffles implements Runnable {//Server/Client code
 	boolean sayID = false;
 	boolean saidThing = false;
 	boolean pokeDone = true;
+	boolean powerWait = false;
 	
 	//public class Messenger implements Runnable{
 
@@ -78,10 +79,10 @@ public class Fluffles implements Runnable {//Server/Client code
 					else if(dialogue == "Next Contact"){
 						//Send next contact
 					}
-					else if(dialogue == "Sending Power"){
-						waitForPower = true;
-						out.println("Ready"); 
-						out.flush();
+					else if(powerWait){
+						tophat.setPower(Integer.parseInt(dialogue));
+						saidThing = false;
+						powerWait = false;
 					}
 					/*else if(dialogue == "Need long"){
 						//Location Sending Procedure
@@ -131,6 +132,11 @@ public class Fluffles implements Runnable {//Server/Client code
 							tophat.setLat(-1);
 							sayLat = false;
 						}
+						else if(powerWait){
+							out.println("Power time");
+							out.flush();
+							saidThing = true;
+						}
 					}
                 }
             }
@@ -172,6 +178,9 @@ public class Fluffles implements Runnable {//Server/Client code
 		else if(tophat.getLon() != -1){
 			toSpeak = String.valueOf(tophat.getLon());
 			sayLong = true;
+		}
+		else if(tophat.wantPower()){
+			powerWait = true;
 		}
 		pokeDone = false;
 			
