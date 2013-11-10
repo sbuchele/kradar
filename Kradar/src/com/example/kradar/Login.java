@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class Login extends FragmentActivity {
 	private String phoneNum;
@@ -16,6 +17,8 @@ public class Login extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.adder);
+		TextView t=(TextView) findViewById(R.id.info);
+		t.setText("Enter phone number");
 		entry=(EditText) findViewById(R.id.phone_number);
 		
 		
@@ -38,7 +41,7 @@ public class Login extends FragmentActivity {
 				Editor edit=Controller.pref.edit();
 				edit.putString(Controller.FRIEND_NO, prev);
 				edit.commit();
-				KradarLocService.fluffy.tophat.setDual(phoneNum);
+				KradarLocService.fluffy.tophat.setPhone(phoneNum);
 				KradarLocService.fluffy.poke();
 				//Intent intent = new Intent(Throw.this, MainActivity.class);
 				//Throw.this.startActivity(intent);
