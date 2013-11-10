@@ -43,7 +43,7 @@ public class Fluffles implements Runnable {//Server/Client code
                     .getOutputStream())), true);
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             System.out.println("Entering Fluffles Loop");
-            out.println("testestestest");
+            //out.println("testestestest");
             while (connected) {
             	out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket
                         .getOutputStream())), true);
@@ -52,7 +52,7 @@ public class Fluffles implements Runnable {//Server/Client code
             		dialogue = null;
 					if (saidThing) {
 						dialogue = in.readLine();
-						System.out.println("Had dialouge!");
+						//System.out.println("Had dialouge!");
 					}
 				} catch (Exception e) {
 					Log.e("ClientActivity", "S: Error", e);
@@ -62,7 +62,7 @@ public class Fluffles implements Runnable {//Server/Client code
             	}
             	else hasStuff = false;
                 if (hasStuff) {
-                	System.out.println("Fluffles had stuff");
+                	//System.out.println("Fluffles had stuff");
                 	this.speakToggleOff();
 					if(dialogue.equals("Send Stuff")){
 						out.println(toSpeak);
