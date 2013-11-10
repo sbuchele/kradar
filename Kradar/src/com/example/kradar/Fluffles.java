@@ -47,16 +47,22 @@ public class Fluffles extends Activity {//Server/Client code
 					if(dialogue == "Send Contacts"){
 						//Initiate contact transmission procedure
 					}
-					if(dialogue == "Next Contact"){
+					else if(dialogue == "Next Contact"){
 						//Send next contact
 					}
-					if(dialogue == "Sending Power"){
+					else if(dialogue == "Sending Power"){
 						waitForPower = true;
 						out.println("Ready"); 
 						out.flush();
 					}
-					if(dialogue == "Need Loc"){
+					else if(dialogue == "Need Loc"){
 						//Location Sending Procedure
+					}
+					else if(dialogue == "Bye bye"){
+						connected = false;
+					}
+					else if(waitForPower){
+						//set power value
 					}
 				}
             }
