@@ -29,7 +29,7 @@ public class Throw extends FragmentActivity {
 			@Override
 			public void onClick(View V)
 			{
-				KradarLocService.fluffy.tophat.setPhone(phoneNum);
+				KradarLocService.fluffy.tophat.setDual(phoneNum);
 				KradarLocService.fluffy.poke();
 				Intent intent = new Intent(Throw.this, MainActivity.class);
 				Throw.this.startActivity(intent);

@@ -52,6 +52,7 @@ public class Fluffles implements Runnable {//Server/Client code
             		dialogue = null;
 					if (saidThing) {
 						dialogue = in.readLine();
+						System.out.println(dialogue);
 						//System.out.println("Had dialouge!");
 					}
 				} catch (Exception e) {
