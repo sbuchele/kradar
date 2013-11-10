@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 public class F_list extends FragmentActivity {
@@ -12,7 +13,7 @@ public class F_list extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list);
 		
-		final ListView listview = (ListView) findViewById(R.id.friendList);
+		final ListView listView = (ListView) findViewById(R.id.friendList);
 		String magicList=Controller.pref.getString(Controller.FRIEND_NO, "");
 		Scanner read=new Scanner(magicList);
 		final ArrayList<String> list = new ArrayList<String>();
@@ -28,15 +29,15 @@ public class F_list extends FragmentActivity {
 	    }
 		
 		
-	   /* listView.setOnItemClickListener(new OnItemClickListener() {
-	    	  @Override
-	    	  public void onItemClick(AdapterView<?> parent, View view,
-	    	    int position, long id) {
-	    	    Toast.makeText(getApplicationContext(),
-	    	      "Click ListItem Number " + position, Toast.LENGTH_LONG)
-	    	      .show();
-	    	  }
-	    	}); */
+	  /* listView.setOnClickListener(new OnItemClickListener() {
+	   @Override
+    	  public void onItemClick(AdapterView<?> parent, View view,
+    	    int position, long id) {
+    	    	switch(position){
+    	    	
+    	    	}
+    	  }
+	   	});/*/
 		
 	
 	}

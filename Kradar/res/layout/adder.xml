@@ -33,6 +33,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/phone_number"
         android:layout_marginTop="29dp"
+        android:background="@drawable/heal_button"
         android:text="@string/entor" />
 
 </RelativeLayout>
