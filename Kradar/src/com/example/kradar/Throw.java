@@ -12,18 +12,15 @@ import android.widget.EditText;
 public class Throw extends FragmentActivity {
 	
 	private String phoneNum;
+	EditText entry;
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.adder);
-		EditText entry=(EditText) findViewById(R.id.phone_number);
-		phoneNum=entry.getText().toString();
+		entry=(EditText) findViewById(R.id.phone_number);
 		
-		String prev=Controller.pref.getString(Controller.FRIEND_NO, "3");
-		prev+=" "+phoneNum;
-		Editor edit=Controller.pref.edit();
-		edit.putString(Controller.FRIEND_NO, prev);
-		edit.commit();
+		
+		
 		
 		Button b1 = (Button) findViewById(R.id.entor);
 		b1.setOnClickListener(Click1());
@@ -36,6 +33,12 @@ public class Throw extends FragmentActivity {
 			@Override
 			public void onClick(View V)
 			{
+				phoneNum=entry.getText().toString();
+				String prev=Controller.pref.getString(Controller.FRIEND_NO, "3");
+				prev+=" "+phoneNum;
+				Editor edit=Controller.pref.edit();
+				edit.putString(Controller.FRIEND_NO, prev);
+				edit.commit();
 				KradarLocService.fluffy.tophat.setDual(phoneNum);
 				KradarLocService.fluffy.poke();
 				//Intent intent = new Intent(Throw.this, MainActivity.class);
