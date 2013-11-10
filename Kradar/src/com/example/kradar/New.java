@@ -18,11 +18,7 @@ import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
 public class New extends FragmentActivity {
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> 359cfa0e4950ca9dcdde118b4426ab5d4a9e8aaf
 private String phoneNum;
 SharedPreferences Phone;
 EditText entry;
@@ -33,14 +29,16 @@ protected void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.new_);
 		entry=(EditText) findViewById(R.id.newInfo);
 		
-		
-<<<<<<< HEAD
+
 		Button b1 = (Button) findViewById(R.id.Enter);
 		b1.setOnClickListener(Click1());
-=======
+
 		Button b = (Button) findViewById(R.id.enter);
 		b.setOnClickListener(Clicky());
->>>>>>> 359cfa0e4950ca9dcdde118b4426ab5d4a9e8aaf
+
+		Button b = (Button) findViewById(R.id.enter);
+		b.setOnClickListener(Clicky());
+
 	}	 
 
 	public OnClickListener Clicky()
