@@ -60,13 +60,7 @@ public class MainActivity extends FragmentActivity
 		
 		startService(new Intent(this, KradarLocService.class));
 		
-		SharedPreferences Phone = PreferenceManager.getDefaultSharedPreferences(this);
-		if (Phone.getString(PHONE_NUMBER, null) == "")
-		{	
-			DialogFragment newFrag = new PopUp();
-			newFrag.show(getSupportFragmentManager(), "");
-			Phone.edit().putString(PHONE_NUMBER, "");
-		}
+		
 		
 		//KradarLocService.fluffy.tophat.setPhone(Phone.getString(PHONE_NUMBER, ""));
 		KradarLocService.fluffy.tophat.setPhone("3");
@@ -95,6 +89,17 @@ public class MainActivity extends FragmentActivity
 	@Override
 	public void onStart()
 	{
+		SharedPreferences Phone = PreferenceManager.getDefaultSharedPreferences(this);
+		if (Phone.getString(PHONE_NUMBER, "") == "")
+		{	
+			//DialogFragment newFrag = new PopUp();
+			//newFrag.show(getSupportFragmentManager(), "");
+			
+			Intent intent = new Intent(MainActivity.this, New.class);
+			MainActivity.this.startActivity(intent);
+			Phone.edit().putString(PHONE_NUMBER, "");
+		}
+		
 		super.onStart();
 
 //<<<<<<< HEAD

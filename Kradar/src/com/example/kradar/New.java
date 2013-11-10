@@ -7,9 +7,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class Throw extends FragmentActivity {
-	
-	private String phoneNum;
+public class New extends FragmentActivity {
+private String phoneNum;
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
