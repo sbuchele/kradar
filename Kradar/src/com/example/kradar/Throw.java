@@ -1,5 +1,6 @@
 package com.example.kradar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
@@ -30,6 +31,8 @@ public class Throw extends FragmentActivity {
 			{
 				KradarLocService.fluffy.tophat.setPhone(phoneNum);
 				KradarLocService.fluffy.poke();
+				Intent intent = new Intent(Throw.this, MainActivity.class);
+				Throw.this.startActivity(intent);
 			}
 
 		};
