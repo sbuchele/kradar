@@ -3,14 +3,14 @@ package com.example.kradar;
 public class Hats 
 {
 
-	boolean namer;
-	int damage;
-	final String phone;
-	int distance;
-	String dual;
-	double lat;
-	double lon;
-	double [] dist;
+	private boolean namer;
+	private int damage;
+	private final String phone;
+	private int distance;
+	private String dual;
+	private double lat;
+	private double lon;
+	private double [] dist;
 	
 	public Hats()
 	{	
@@ -22,64 +22,64 @@ public class Hats
 		phone = null;
 	}
 
-	public boolean isNamer() {
+	public synchronized boolean isNamer() {
 		return namer;
 	}
 
-	public void setNamer(boolean namer) {
+	public synchronized void setNamer(boolean namer) {
 		this.namer = namer;
 	}
 
-	public int getDamage() {
+	public synchronized int getDamage() {
 		return damage;
 	}
 
-	public void setDamage(int damage) {
+	public synchronized void setDamage(int damage) {
 		this.damage = damage;
 	}
 
 	
-	public int getDistance() {
+	public synchronized int getDistance() {
 		return distance;
 	}
 
-	public void setDistance(int distance) {
+	public synchronized void setDistance(int distance) {
 		this.distance = distance;
 	}
 
-	public String getDual() {
+	public synchronized String getDual() {
 		return dual;
 	}
 
-	public void setDual(String dual) {
+	public synchronized void setDual(String dual) {
 		this.dual = dual;
 	}
 
-	public double getLat() {
+	public synchronized double getLat() {
 		return lat;
 	}
 
-	public void setLat(double lat) {
+	public synchronized void setLat(double lat) {
 		this.lat = lat;
 	}
 
-	public double getLon() {
+	public synchronized double getLon() {
 		return lon;
 	}
 
-	public void setLon(double lon) {
+	public synchronized void setLon(double lon) {
 		this.lon = lon;
 	}
 
-	public double[] getDist() {
+	public synchronized double[] getDist() {
 		return dist;
 	}
 
-	public void setDist(double[] dist) {
+	public synchronized void setDist(double[] dist) {
 		this.dist = dist;
 	}
 
-	public String getPhone() {
+	public synchronized String getPhone() {
 		return phone;
 	}
 
