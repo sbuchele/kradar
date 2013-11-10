@@ -32,8 +32,6 @@ protected void onCreate(Bundle savedInstanceState) {
 			@Override
 			public void onClick(View V)
 			{
-				//Fluffles.tophat.setPhone(phoneNum);
-				//KradarLocService.fluffy.poke();
 				Phone.edit().putString(MainActivity.PHONE_NUMBER, phoneNum);
 				KradarLocService.canGetLoc = true;
 				MainActivity.first = true;
