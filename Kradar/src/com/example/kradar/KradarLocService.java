@@ -36,8 +36,7 @@ GooglePlayServicesClient.OnConnectionFailedListener,
 	
 	public KradarLocService() {
 		super();
-		Context ctx = getApplicationContext();
-		prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
+		
 	}
     
     @Override
@@ -62,6 +61,9 @@ GooglePlayServicesClient.OnConnectionFailedListener,
          * handle callbacks.
          */
         mLocationClient = new LocationClient(this, this, this);
+        
+        Context ctx = getApplicationContext();
+		prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
     }
 	
     private boolean servicesConnected() {
