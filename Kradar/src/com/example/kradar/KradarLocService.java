@@ -39,14 +39,10 @@ GooglePlayServicesClient.OnConnectionFailedListener,
 		
 	}
 	
-	private static Fluffles fluffy;
+	public static Fluffles fluffy;
 	static Thread fluffyThread;
 	
-	public Fluffles getFluffy()
-	{
-		return fluffy;
-	}
-    
+	
     @Override
 	public void onCreate() {
         super.onCreate();
