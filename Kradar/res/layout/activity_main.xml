@@ -55,7 +55,8 @@
         android:layout_height="100dp"
         android:layout_alignLeft="@+id/attack"
         android:layout_below="@+id/attack"
-        android:text="@string/Friends" />
+        android:text="@string/Friends" 
+        style="@style/button_text"/>
 
     <Button
         android:id="@+id/add"
@@ -64,7 +65,8 @@
         android:layout_height="100dp"
         android:layout_alignRight="@+id/attack"
         android:layout_below="@+id/attack"
-        android:text="@string/Updates" />
+        android:text="@string/Updates"
+        style="@style/button_text" />
 
     <ImageView
         android:id="@+id/imageView1"

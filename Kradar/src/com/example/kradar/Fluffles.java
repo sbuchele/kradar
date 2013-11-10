@@ -154,13 +154,15 @@ public class Fluffles implements Runnable {//Server/Client code
 				e.printStackTrace();
 			}
 		}
-		if(tophat.getPhone() != null){
+		if(tophat.getPhone() != null && tophat.getPhone() != ""){
 			toSpeak = tophat.getPhone();
 			sayID = true;
 			System.out.println("I wanna tell the server my ID");
 		}
-		else if(tophat.getDual() != null){
+		else if(tophat.getDual() != null && tophat.getDual() != ""){
 			toSpeak = tophat.getDual();
+			System.out.println(tophat.getDual());
+			System.out.println(toSpeak);
 			sayNum = true;
 		}
 		else if(tophat.getLat() != -1){
