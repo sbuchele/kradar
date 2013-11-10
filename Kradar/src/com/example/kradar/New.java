@@ -12,11 +12,11 @@ import android.widget.EditText;
 
 public class New extends FragmentActivity {
 private String phoneNum;
-SharedPreferences Phone;	
+SharedPreferences Phone;
 
 protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Phone = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+		Phone = Controller.pref;
 		setContentView(R.layout.adder);
 		EditText entry=(EditText) findViewById(R.id.phone_number);
 		phoneNum=entry.getText().toString();
@@ -33,6 +33,7 @@ protected void onCreate(Bundle savedInstanceState) {
 			public void onClick(View V)
 			{
 				Phone.edit().putString(MainActivity.PHONE_NUMBER, phoneNum);
+				Phone.edit().commit();
 				KradarLocService.canGetLoc = true;
 				MainActivity.first = true;
 				Intent intent = new Intent(New.this, MainActivity.class);

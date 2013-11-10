@@ -139,7 +139,7 @@ GooglePlayServicesClient.OnConnectionFailedListener,
         
         fluffy.tophat.setLat(arg0.getLatitude());
        	fluffy.tophat.setLon(arg0.getLongitude());
-        //fluffy.poke();
+        fluffy.poke();
         
         int power=prefs.getInt(POWER, 0);
         prefs.edit().putInt(POWER, power);///TODO get power information
