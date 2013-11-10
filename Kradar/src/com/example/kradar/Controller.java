@@ -81,9 +81,27 @@ public class Controller {
 				case'D':result+=13*Math.pow(10,(num.length()-x-1)) ;break;
 				case'E':result+=14*Math.pow(10,(num.length()-x-1)) ;break;
 				case'F':result+=15*Math.pow(10,(num.length()-x-1)) ;break;
-
+				case'G':result+=16*Math.pow(10,(num.length()-x-1)) ;break;
+				case'H':result+=17*Math.pow(10,(num.length()-x-1)) ;break;
+				case'I':result+=18*Math.pow(10,(num.length()-x-1)) ;break;
+				case'J':result+=19*Math.pow(10,(num.length()-x-1)) ;break;
+				case'K':result+=20*Math.pow(10,(num.length()-x-1)) ;break;
+				case'L':result+=21*Math.pow(10,(num.length()-x-1)) ;break;
+				case'M':result+=22*Math.pow(10,(num.length()-x-1)) ;break;
+				case'N':result+=23*Math.pow(10,(num.length()-x-1)) ;break;
+				case'O':result+=24*Math.pow(10,(num.length()-x-1)) ;break;
+				case'P':result+=25*Math.pow(10,(num.length()-x-1)) ;break;
+				case'Q':result+=26*Math.pow(10,(num.length()-x-1)) ;break;
+				case'R':result+=27*Math.pow(10,(num.length()-x-1)) ;break;
+				case'S':result+=28*Math.pow(10,(num.length()-x-1)) ;break;
+				case'T':result+=29*Math.pow(10,(num.length()-x-1)) ;break;
+				case'U':result+=30*Math.pow(10,(num.length()-x-1)) ;break;
+				case'V':result+=31*Math.pow(10,(num.length()-x-1)) ;break;
+				case'W':result+=32*Math.pow(10,(num.length()-x-1)) ;break;
 			}
 		}
+		return result;
+		
 	}
 	
 	
