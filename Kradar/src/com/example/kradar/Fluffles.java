@@ -64,7 +64,9 @@ public class Fluffles extends Activity {//Server/Client code
 					else if(waitForPower){
 						//set power value
 					}
-					else if(dialogue == "Who you?")
+					else if(dialogue == "Who you?"){
+						//ID procedure
+					}
 				}
             }
             socket.close();
