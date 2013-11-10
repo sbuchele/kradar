@@ -41,6 +41,7 @@
     <ProgressBar
         android:id="@+id/chargebar"
         style="?android:attr/progressBarStyleHorizontal"
+        android:max="1000"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/Friends"
@@ -64,5 +65,13 @@
         android:layout_alignRight="@+id/attack"
         android:layout_below="@+id/attack"
         android:text="@string/Updates" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:src="@drawable/images" />
 
 </RelativeLayout>

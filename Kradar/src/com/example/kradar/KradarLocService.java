@@ -41,6 +41,7 @@ GooglePlayServicesClient.OnConnectionFailedListener,
 	public static Fluffles fluffy;
 	static Thread fluffyThread;
 	
+	public static boolean canGetLoc = false;
 	
     @Override
 	public void onCreate() {
@@ -129,7 +130,7 @@ GooglePlayServicesClient.OnConnectionFailedListener,
 	@Override
 	public void onLocationChanged(Location arg0) {
 		 // Report to the UI that the location was updated
-        if(fluffy.tophat.getPhone() != null)
+        if(canGetLoc == true)
 		{
 		String msg = "Updated Location: " +
                 Double.toString(arg0.getLatitude()) + "," +

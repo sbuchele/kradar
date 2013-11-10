@@ -24,6 +24,7 @@ public final class R {
         public static final int dark_button=0x7f020000;
         public static final int heal_button=0x7f020001;
         public static final int ic_launcher=0x7f020002;
+        public static final int images=0x7f020003;
     }
     public static final class id {
         public static final int Enter=0x7f08000c;
@@ -33,11 +34,19 @@ public final class R {
         public static final int attack=0x7f080005;
         public static final int charge=0x7f080002;
         public static final int chargebar=0x7f080003;
+<<<<<<< HEAD
         public static final int entor=0x7f080009;
         public static final int friendList=0x7f08000a;
         public static final int info=0x7f080008;
         public static final int new_info=0x7f08000b;
         public static final int phone_number=0x7f080007;
+=======
+        public static final int entor=0x7f08000a;
+        public static final int imageView1=0x7f080007;
+        public static final int info=0x7f080009;
+        public static final int new_info=0x7f08000b;
+        public static final int phone_number=0x7f080008;
+>>>>>>> c18535989492f27f02dad7fcbd9a058383e40136
         public static final int textView1=0x7f080001;
         public static final int textView2=0x7f080000;
         public static final int text_entry=0x7f08000d;
