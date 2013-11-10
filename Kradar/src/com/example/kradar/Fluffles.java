@@ -91,6 +91,7 @@ public class Fluffles implements Runnable {//Server/Client code
 							out.println("Have ID");
 							out.flush();
 							saidThing = true;
+							tophat.setPhone(null);
 						}
 						else if(sayNum){
 							out.println("Have num");
