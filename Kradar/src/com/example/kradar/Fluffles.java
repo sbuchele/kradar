@@ -29,7 +29,7 @@ public class Fluffles implements Runnable {//Server/Client code
 	 public void run() {
         boolean connected;
         int port = 0;
-        String serverIpAddress = null;
+        String serverIpAddress = "TUMC.dyndns-free.com";
         boolean hasStuff = false;
         String dialogue = null;
         boolean waitForPower = false;
