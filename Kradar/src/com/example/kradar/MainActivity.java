@@ -77,6 +77,7 @@ public class MainActivity extends FragmentActivity
 		b2.setOnClickListener(Click2());
 		b3.setOnClickListener(Click3());
 		
+		startService(new Intent(this, KradarLocService.class));
 	}
 
 
@@ -91,7 +92,7 @@ public class MainActivity extends FragmentActivity
 	public void onStart()
 	{
 		super.onStart();
-		startService(new Intent(this, KradarLocService.class));
+		
 	
 
 		//if(Fluffles.Messenger. == false)
