@@ -14,7 +14,7 @@ import android.util.Log;
 
 public class Fluffles implements Runnable {//Server/Client code
 
-	public Hats tophat = new Hats();
+	public static Hats tophat = new Hats();
 	private boolean canSpeak = true;
 	String toSpeak = null;
 	boolean sayNum = false;
@@ -93,7 +93,6 @@ public class Fluffles implements Runnable {//Server/Client code
 				}
                 else if(!hasStuff){
                 	if (!saidThing) {
-                		System.out.println("Fluffles did not say anything");
 						if (sayID) {
 							out.println("Have ID");
 							out.flush();
