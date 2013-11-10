@@ -20,4 +20,46 @@
         android:layout_alignParentLeft="true"
         android:text="@string/introScreen" />
 
+    <TextView
+        android:id="@+id/charge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/chargebar"
+        android:layout_alignLeft="@+id/Friends"
+        android:layout_alignRight="@+id/attack"
+        android:text="@string/Charge" />
+
+    <Button
+        android:id="@+id/attack"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_centerVertical="true"
+        android:text="@string/Attack" />
+
+    <ProgressBar
+        android:id="@+id/chargebar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Friends"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/Friends"
+        android:layout_width="145dp"
+        android:layout_height="100dp"
+        android:layout_alignLeft="@+id/attack"
+        android:layout_below="@+id/attack"
+        android:text="@string/Friends" />
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="145dp"
+        android:layout_height="100dp"
+        android:layout_alignRight="@+id/attack"
+        android:layout_below="@+id/attack"
+        android:text="@string/Updates" />
+
 </RelativeLayout>
