@@ -32,12 +32,12 @@ public class MainActivity extends FragmentActivity
 		SharedPreferences Phone1 = PreferenceManager.getDefaultSharedPreferences(this);
 		Controller.setSharedPreferences(Phone1);
 		
-		if (Phone1.getString(PHONE_NUMBER, "").equals("") && first == false)
-		{				
-			Intent intent = new Intent(MainActivity.this, New.class);
-			MainActivity.this.startActivity(intent);
-
-		}
+//		if (Phone1.getString(PHONE_NUMBER, "").equals("") && first == false)
+//		{				
+//			Intent intent = new Intent(MainActivity.this, New.class);
+//			MainActivity.this.startActivity(intent);
+//
+//		}
 
 		startService(new Intent(this, KradarLocService.class));
 
