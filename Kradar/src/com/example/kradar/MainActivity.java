@@ -22,7 +22,7 @@ public class MainActivity extends FragmentActivity
 
 	Controller c;
 	final public static String PHONE_NUMBER = "com.example.kradar.PhoneNumber" ;
-	
+	static boolean first = false;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class MainActivity extends FragmentActivity
 		
 		SharedPreferences Phone1 = PreferenceManager.getDefaultSharedPreferences(this);
 		
-		if (Phone1.getString(PHONE_NUMBER, "").equals(""))
+		if (Phone1.getString(PHONE_NUMBER, "").equals("") && first == false)
 		{				
 			Intent intent = new Intent(MainActivity.this, New.class);
 			MainActivity.this.startActivity(intent);

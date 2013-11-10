@@ -35,7 +35,7 @@ protected void onCreate(Bundle savedInstanceState) {
 				//Fluffles.tophat.setPhone(phoneNum);
 				//KradarLocService.fluffy.poke();
 				Phone.edit().putString(MainActivity.PHONE_NUMBER, phoneNum);
-				
+				MainActivity.first = true;
 				Intent intent = new Intent(New.this, MainActivity.class);
 				New.this.startActivity(intent);
 			
