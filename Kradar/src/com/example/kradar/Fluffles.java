@@ -14,6 +14,7 @@ import android.util.Log;
 
 public class Fluffles extends Activity {//Server/Client code
 
+	public Hats tophat = new Hats();
 	public class Messenger implements Runnable{
 
 	@Override
@@ -76,8 +77,8 @@ public class Fluffles extends Activity {//Server/Client code
             connected = false;
         }
     }
-	public void poke(){
-		//THE POKE METHOD
+	public void poke(Hats hat){
+		//if(hat.)
 	}
 	}
 }
