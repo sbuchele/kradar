@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
 public class New extends FragmentActivity {
+
 private String phoneNum;
 SharedPreferences Phone;
 EditText entry;
@@ -27,7 +28,7 @@ protected void onCreate(Bundle savedInstanceState) {
 		entry=(EditText) findViewById(R.id.new_info);
 		
 		
-		Button b1 = (Button) findViewById(R.id.entor);
+		Button b1 = (Button) findViewById(R.id.Enter);
 		b1.setOnClickListener(Click1());
 	}	 
 
