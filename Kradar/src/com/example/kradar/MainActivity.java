@@ -16,6 +16,7 @@ import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MotionEvent;
@@ -254,6 +255,12 @@ public class MainActivity extends FragmentActivity
 			
 		};
 		return click;
+	}
+
+	public String getMyPhoneNumber()
+	{
+	    return ((TelephonyManager) getSystemService(TELEPHONY_SERVICE))
+	            .getLine1Number();
 	}
 	
 }
