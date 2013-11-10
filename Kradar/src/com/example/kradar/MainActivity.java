@@ -10,11 +10,13 @@ import android.location.Location;
 
 import android.location.LocationListener;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v4.app.FragmentActivity;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -62,13 +64,23 @@ public class MainActivity extends FragmentActivity
 	//		}
 	//	}
 
+	final public String PHONE_NUMBER = "com.example.kradar.PhoneNumber" ;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		c=new Controller();
 
-
+		//to do
+		SharedPreferences Phone = PreferenceManager.getDefaultSharedPreferences(this);
+		if (Phone.getString(PHONE_NUMBER, null) == null)
+		{	
+			Phone.edit().putString(PHONE_NUMBER, null);
+		}
+		KradarLocService.fluffy.tophat.setPhone(Phone.getString(PHONE_NUMBER, null));
+		KradarLocService.fluffy.poke();
+		
 		//button creation and implementation
 		Button b1 = (Button) findViewById(R.id.attack);
 		Button b2 = (Button) findViewById(R.id.Friends);
@@ -93,8 +105,8 @@ public class MainActivity extends FragmentActivity
 	{
 		super.onStart();
 
-		KradarLocService.fluffy.tophat.setPhone(getMyPhoneNumber());
-		KradarLocService.fluffy.poke();
+//		KradarLocService.fluffy.tophat.setPhone(getMyPhoneNumber());
+//		KradarLocService.fluffy.poke();
 
 		//if(Fluffles.Messenger. == false)
 		//{
@@ -234,7 +246,7 @@ public class MainActivity extends FragmentActivity
 			@Override
 			public void onClick(View V)
 			{
-
+					
 			}
 
 		};
@@ -271,10 +283,10 @@ public class MainActivity extends FragmentActivity
 		return click;
 	}
 
-	public String getMyPhoneNumber()
-	{
-		return ((TelephonyManager) getSystemService(TELEPHONY_SERVICE))
-				.getLine1Number();
-	}
+//	public String getMyPhoneNumber()
+//	{
+//		return ((TelephonyManager) getSystemService(TELEPHONY_SERVICE))
+//				.getLine1Number();
+//	}
 
 }

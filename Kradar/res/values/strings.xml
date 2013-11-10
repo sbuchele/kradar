@@ -10,4 +10,6 @@
 	<string name="Charge">Charge Bar</string>
 	<string name="info_add">Please insert your friend\'s phone number below</string>
 	<string name="entor">Enter</string>
+	<string name="Title">Enter Phone Number</string>
+	<string name="cansel">Cancel</string>
 </resources>
