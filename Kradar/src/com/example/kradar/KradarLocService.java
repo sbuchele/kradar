@@ -1,13 +1,5 @@
 package com.example.kradar;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesClient;
-import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.google.android.gms.location.LocationClient;
-import com.google.android.gms.location.LocationListener;
-import com.google.android.gms.location.LocationRequest;
-
-import android.app.IntentService;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -17,18 +9,23 @@ import android.os.Binder;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.content.LocalBroadcastManager;
 import android.widget.Toast;
 
-public class KradarLocService extends Service implements PopUp.NoticeDialogListener,
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesClient;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.location.LocationClient;
+import com.google.android.gms.location.LocationListener;
+import com.google.android.gms.location.LocationRequest;
+
+public class KradarLocService extends Service implements 
 GooglePlayServicesClient.ConnectionCallbacks,
 GooglePlayServicesClient.OnConnectionFailedListener,
 	LocationListener{
     
 	public final String LOCATION_INTENT="com.example.kradar.Return Loc";
 	public final String LOCATION_EXTRA="com.example.kradar.location";
+	public final String POWER="com.example.kradar.powerlevel";
 	private SharedPreferences prefs;
     private LocationClient mLocationClient;
     private LocationRequest mLocationRequest;
@@ -140,6 +137,9 @@ GooglePlayServicesClient.OnConnectionFailedListener,
         Fluffles.tophat.setLat(arg0.getLatitude());
         Fluffles.tophat.setLon(arg0.getLongitude());
         fluffy.poke();
+        
+        int power=prefs.getInt(POWER, 0);
+        prefs.edit().putInt(POWER, power);///TODO get power information
 	}
 
 	@Override
@@ -173,17 +173,6 @@ GooglePlayServicesClient.OnConnectionFailedListener,
         super.onDestroy();  
     }
 
-	@Override
-	public void onPositiveClick(DialogFragment dialog, String phoney) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void onNegativeClick(DialogFragment dialog) {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	
 	
