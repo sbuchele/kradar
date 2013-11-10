@@ -80,6 +80,7 @@ public class MainActivity extends FragmentActivity
 		b1.setOnClickListener(Click1());
 		b2.setOnClickListener(Click2());
 		b3.setOnClickListener(Click3());
+		
 	}
 
 
@@ -90,7 +91,12 @@ public class MainActivity extends FragmentActivity
 		return true;
 	}
 
-
+	@Override
+	public void onStart()
+	{
+		super.onStart();
+		startService(new Intent(this, KradarLocService.class));
+	}
 
 
 //	/*
