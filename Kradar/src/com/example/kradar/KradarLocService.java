@@ -23,9 +23,9 @@ GooglePlayServicesClient.ConnectionCallbacks,
 GooglePlayServicesClient.OnConnectionFailedListener,
 	LocationListener{
     
-	public final String LOCATION_INTENT="com.example.kradar.Return Loc";
-	public final String LOCATION_EXTRA="com.example.kradar.location";
-	public final String POWER="com.example.kradar.powerlevel";
+	public final static String LOCATION_INTENT="com.example.kradar.Return Loc";
+	public final static String LOCATION_EXTRA="com.example.kradar.location";
+	public final static String POWER="com.example.kradar.powerlevel";
 	private SharedPreferences prefs;
     private LocationClient mLocationClient;
     private LocationRequest mLocationRequest;

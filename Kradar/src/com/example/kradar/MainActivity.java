@@ -23,24 +23,24 @@ public class MainActivity extends FragmentActivity
 	Controller c;
 	final public static String PHONE_NUMBER = "com.example.kradar.PhoneNumber" ;
 	static boolean first = false;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		c=new Controller();
-		
+
 		SharedPreferences Phone1 = PreferenceManager.getDefaultSharedPreferences(this);
-		
+
 		if (Phone1.getString(PHONE_NUMBER, "").equals("") && first == false)
 		{				
 			Intent intent = new Intent(MainActivity.this, New.class);
 			MainActivity.this.startActivity(intent);
-					
+
 		}
-		
+
 		startService(new Intent(this, KradarLocService.class));
-		
+
 		//button creation and implementation
 		Button b1 = (Button) findViewById(R.id.attack);
 		Button b2 = (Button) findViewById(R.id.Friends);
@@ -49,7 +49,7 @@ public class MainActivity extends FragmentActivity
 		b2.setOnClickListener(Click2());
 		b3.setOnClickListener(Click3());
 
-		
+
 	}
 
 
@@ -64,20 +64,20 @@ public class MainActivity extends FragmentActivity
 	public void onStart()
 	{
 		super.onStart();
-		
-		
-		
-}
+		SharedPreferences Phone1 = PreferenceManager.getDefaultSharedPreferences(this);
+		KradarLocService.fluffy.tophat.setPhone(Phone1.getString(PHONE_NUMBER, ""));
+		KradarLocService.fluffy.poke();
+
+	}
 	public OnClickListener Click1()
 	{
+		SharedPreferences Power= PreferenceManager.getDefaultSharedPreferences(this);
 		OnClickListener click = new OnClickListener()
 		{
 			@Override
 			public void onClick(View V)
 			{
-					//KradarLocService.fluffy.tophat.setDamage(damage);
-					//KradarLocService.fluffy.poke();
-					//KradarLocService.fluffy.tophat.getdamage(damage);
+				
 			}
 
 		};
