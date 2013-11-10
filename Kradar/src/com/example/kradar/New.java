@@ -36,9 +36,9 @@ protected void onCreate(Bundle savedInstanceState) {
 				Phone.edit().commit();
 				KradarLocService.canGetLoc = true;
 				MainActivity.first = true;
-				Intent intent = new Intent(New.this, MainActivity.class);
-				New.this.startActivity(intent);
-			
+				//Intent intent = new Intent(New.this, MainActivity.class);
+				//New.this.startActivity(intent);
+				finish();
 			
 			}
 

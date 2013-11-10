@@ -63,6 +63,7 @@ GooglePlayServicesClient.OnConnectionFailedListener,
         
         fluffy = new Fluffles();
         //Put the phone's ID in fluffy's hat
+        KradarLocService.fluffy.tophat.setPhone("3");
         fluffyThread = new Thread(fluffy);
         fluffyThread.start();
         
@@ -99,6 +100,9 @@ GooglePlayServicesClient.OnConnectionFailedListener,
     @Override
     public int onStartCommand (Intent intent, int flags, int startId)
     {
+    	//KradarLocService.fluffy.tophat.setPhone("3");
+		KradarLocService.fluffy.poke();
+		
         super.onStartCommand(intent, flags, startId);
         
         if(!servicesAvailable || mLocationClient.isConnected() || mInProgress)
