@@ -131,7 +131,7 @@ public class Fluffles implements Runnable {//Server/Client code
 	private synchronized void speakToggleOff(){
 		canSpeak = false;
 	}
-	public synchronized void poke(){
+	public void poke(){
 		while(toSpeak != null){
 			try {
 				this.wait(100);
