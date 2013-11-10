@@ -76,6 +76,8 @@ public class Fluffles extends Activity {//Server/Client code
             connected = false;
         }
     }
-
+	public void poke(){
+		//THE POKE METHOD
+	}
 	}
 }
