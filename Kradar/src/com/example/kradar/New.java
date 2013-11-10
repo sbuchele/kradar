@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -23,21 +24,25 @@ EditText entry;
 protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Phone = Controller.pref;
-		setContentView(R.layout.adder);
-		entry=(EditText) findViewById(R.id.new_info);
+		setContentView(R.layout.new_);
+		entry=(EditText) findViewById(R.id.newInfo);
 		
 		
-		Button b1 = (Button) findViewById(R.id.entor);
-		b1.setOnClickListener(Click1());
+		Button b = (Button) findViewById(R.id.enter);
+		b.setOnClickListener(Clicky());
 	}	 
 
-	public OnClickListener Click1()
+	public OnClickListener Clicky()
 	{
 		OnClickListener click = new OnClickListener()
 		{
 			@Override
 			public void onClick(View V)
-			{
+			{	
+				entry=(EditText) findViewById(R.id.newInfo);
+				Log.e("Kradar","entry==null"+(entry==null));
+				Log.e("Kradar","entry.getText==null"+(entry.getText()==null));
+				Log.e("Kradar",entry.getText().toString());
 				phoneNum=entry.getText().toString();
 				Phone.edit().putString(MainActivity.PHONE_NUMBER, phoneNum);
 				Phone.edit().commit();
