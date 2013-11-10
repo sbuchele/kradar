@@ -19,6 +19,14 @@ public class Boss {
 		return power;
 	}
 
+	public void setHealth(int health) {
+		this.health = health;
+	}
+
+	public void setPower(int power) {
+		this.power = power;
+	}
+
 	public String getName() {
 		return name;
 	}
