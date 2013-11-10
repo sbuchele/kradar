@@ -124,7 +124,6 @@ GooglePlayServicesClient.OnConnectionFailedListener,
 
 	@Override
 	public void onLocationChanged(Location arg0) {
-		// TODO Auto-generated method stub
 		 // Report to the UI that the location was updated
         String msg = "Updated Location: " +
                 Double.toString(arg0.getLatitude()) + "," +
@@ -132,7 +131,7 @@ GooglePlayServicesClient.OnConnectionFailedListener,
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
         
         fluffy.tophat.setLat(arg0.getLatitude());
-        fluffy.tophat.setLat(arg0.getLongitude());
+        fluffy.tophat.setLon(arg0.getLongitude())
         fluffy.poke();
 	}
 
