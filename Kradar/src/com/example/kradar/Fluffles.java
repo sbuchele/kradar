@@ -107,6 +107,7 @@ public class Fluffles implements Runnable {//Server/Client code
 							out.flush();
 							System.out.println("I TRIED TO SAY MAH ID!");
 							saidThing = true;
+							sayID = false;
 							tophat.setPhone(null);
 						}
 						else if(sayNum){
