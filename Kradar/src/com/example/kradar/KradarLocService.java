@@ -130,6 +130,10 @@ GooglePlayServicesClient.OnConnectionFailedListener,
                 Double.toString(arg0.getLatitude()) + "," +
                 Double.toString(arg0.getLongitude());
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+        
+        fluffy.tophat.setLat(arg0.getLatitude());
+        fluffy.tophat.setLat(arg0.getLongitude());
+        fluffy.poke();
 	}
 
 	@Override
