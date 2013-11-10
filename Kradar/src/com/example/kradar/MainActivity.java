@@ -63,8 +63,10 @@ public class MainActivity extends FragmentActivity
 	@Override
 	public void onStart()
 	{
-		
 		super.onStart();
+		
+		
+		
 }
 	public OnClickListener Click1()
 	{
@@ -73,7 +75,9 @@ public class MainActivity extends FragmentActivity
 			@Override
 			public void onClick(View V)
 			{
-					
+					//KradarLocService.fluffy.tophat.setDamage(damage);
+					//KradarLocService.fluffy.poke();
+					//KradarLocService.fluffy.tophat.getdamage(damage);
 			}
 
 		};
