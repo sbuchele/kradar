@@ -26,7 +26,7 @@ public class Fluffles implements Runnable {//Server/Client code
 	//public class Messenger implements Runnable{
 
 	@Override
-	 public void run() {
+	 public synchronized void run() {
         boolean connected;
         int port = 8888;
         String serverIpAddress = "TUMC.dyndns-free.com";
@@ -44,7 +44,10 @@ public class Fluffles implements Runnable {//Server/Client code
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             while (connected) {
             	try {
-					dialogue = in.readLine();
+            		dialogue = null;
+					if (in.ready()) {
+						dialogue = in.readLine();
+					}
 				} catch (Exception e) {
 					Log.e("ClientActivity", "S: Error", e);
 				}
@@ -90,6 +93,7 @@ public class Fluffles implements Runnable {//Server/Client code
 						if (sayID) {
 							out.println("Have ID");
 							out.flush();
+							System.out.println("I TRIED TO SAY MAH ID!");
 							saidThing = true;
 							tophat.setPhone(null);
 						}
@@ -136,6 +140,7 @@ public class Fluffles implements Runnable {//Server/Client code
 		if(tophat.getPhone() != null){
 			toSpeak = tophat.getPhone();
 			sayID = true;
+			System.out.println("I wanna tell the server my ID");
 		}
 		else if(tophat.getDual() != null){
 			toSpeak = tophat.getDual();
