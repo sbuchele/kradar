@@ -17,10 +17,12 @@ import android.os.Binder;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.LocalBroadcastManager;
 import android.widget.Toast;
 
-public class KradarLocService extends Service implements 
+public class KradarLocService extends Service implements
 GooglePlayServicesClient.ConnectionCallbacks,
 GooglePlayServicesClient.OnConnectionFailedListener,
 	LocationListener{
@@ -80,6 +82,8 @@ GooglePlayServicesClient.OnConnectionFailedListener,
 		SharedPreferences Phone = PreferenceManager.getDefaultSharedPreferences(this);
 		if (Phone.getString(PHONE_NUMBER, null) == "")
 		{	
+			DialogFragment newFrag = new PopUp();
+			newFrag.show(getSupportFragmentManager(), "");
 			Phone.edit().putString(PHONE_NUMBER, "");
 		}
 		
