@@ -12,7 +12,7 @@ import android.app.Activity;
 import android.os.AsyncTask;
 import android.util.Log;
 
-public class Fluffles extends Activity {//Server/Client code
+public class Fluffles implements Runnable {//Server/Client code
 
 	public Hats tophat = new Hats();
 	private boolean canSpeak = true;
@@ -23,7 +23,7 @@ public class Fluffles extends Activity {//Server/Client code
 	boolean sayID = false;
 	boolean saidThing = false;
 	
-	public class Messenger implements Runnable{
+	//public class Messenger implements Runnable{
 
 	@Override
 	 public void run() {
@@ -146,5 +146,6 @@ public class Fluffles extends Activity {//Server/Client code
 			sayLong = true;
 		}
 	}
-	}
+	//}
+
 }
