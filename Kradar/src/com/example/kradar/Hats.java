@@ -5,7 +5,7 @@ public class Hats
 
 	private boolean namer;
 	private int damage;
-	private final String phone;
+	private String phone;
 	private int distance;
 	private String dual;
 	private double lat;
@@ -81,6 +81,9 @@ public class Hats
 
 	public synchronized String getPhone() {
 		return phone;
+	}
+	public synchronized void setPhone(String phone){
+		this.phone = phone;
 	}
 
 
