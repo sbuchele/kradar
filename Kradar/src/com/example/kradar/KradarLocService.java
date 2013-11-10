@@ -57,9 +57,9 @@ GooglePlayServicesClient.OnConnectionFailedListener,
         // Use moderately high accuracy
         mLocationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
         // Set the update interval to 5 min
-        mLocationRequest.setInterval(1000);//*60*5);
+        mLocationRequest.setInterval(1000*60*5);
         // Set the fastest update interval to 2.5 min
-        mLocationRequest.setFastestInterval(1000);//*30*5);
+        mLocationRequest.setFastestInterval(1000*30*5);
         
         servicesAvailable = servicesConnected();
         
