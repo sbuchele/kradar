@@ -100,6 +100,7 @@ public class Fluffles implements Runnable {//Server/Client code
                 	if (!saidThing) {
 						if (sayID) {
 							out.println("Have ID");
+							out.checkError();
 							out.flush();
 							System.out.println("I TRIED TO SAY MAH ID!");
 							saidThing = true;
