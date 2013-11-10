@@ -10,15 +10,5 @@ public class Throw extends FragmentActivity {
 		setContentView(R.layout.adder);
 		EditText entry=(EditText) findViewById(R.id.phone_number);
 		String phoneNum=entry.getText().toString();
-
-		Hats tricorn = new Hats();
-		
-		
-
-	}
-	
-	
-	
-	
-	 
+	}	 
 }
