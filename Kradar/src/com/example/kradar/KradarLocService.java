@@ -125,6 +125,7 @@ GooglePlayServicesClient.OnConnectionFailedListener,
 		return new LocalBinder();
 	}
 
+	@SuppressWarnings("static-access")
 	@Override
 	public void onLocationChanged(Location arg0) {
 		 // Report to the UI that the location was updated
@@ -135,8 +136,8 @@ GooglePlayServicesClient.OnConnectionFailedListener,
                 Double.toString(arg0.getLongitude());
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
         
-        Fluffles.tophat.setLat(arg0.getLatitude());
-        Fluffles.tophat.setLon(arg0.getLongitude());
+        fluffy.tophat.setLat(arg0.getLatitude());
+       	fluffy.tophat.setLon(arg0.getLongitude());
         fluffy.poke();
         
         int power=prefs.getInt(POWER, 0);
