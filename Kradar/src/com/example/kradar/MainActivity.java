@@ -1,31 +1,17 @@
 package com.example.kradar;
 
-import java.util.ArrayList;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesClient;
-import com.google.android.gms.common.GooglePlayServicesUtil;
-
-import android.location.Location;
-
-import android.location.LocationListener;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.app.Activity;
-import android.app.Dialog;
-import android.app.DialogFragment;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
-import android.telephony.TelephonyManager;
-import android.util.Log;
 import android.view.Menu;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.Toast;
+
 
 public class MainActivity extends FragmentActivity 
 //implements
@@ -35,7 +21,7 @@ public class MainActivity extends FragmentActivity
 {
 
 	Controller c;
-
+	final public String PHONE_NUMBER = "com.example.kradar.PhoneNumber" ;
 	//	// Global constants
 	//	/*
 	//	 * Define a request code to send to Google Play services
@@ -74,7 +60,17 @@ public class MainActivity extends FragmentActivity
 		
 		startService(new Intent(this, KradarLocService.class));
 		
+		SharedPreferences Phone = PreferenceManager.getDefaultSharedPreferences(this);
+		if (Phone.getString(PHONE_NUMBER, null) == "")
+		{	
+			DialogFragment newFrag = new PopUp();
+			newFrag.show(getSupportFragmentManager(), "");
+			Phone.edit().putString(PHONE_NUMBER, "");
+		}
 		
+		//KradarLocService.fluffy.tophat.setPhone(Phone.getString(PHONE_NUMBER, ""));
+		KradarLocService.fluffy.tophat.setPhone("3");
+		KradarLocService.fluffy.poke();
 		
 		
 		//button creation and implementation
