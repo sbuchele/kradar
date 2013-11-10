@@ -53,6 +53,10 @@ public class Fluffles extends Activity {//Server/Client code
 					if(dialogue == "Sending Power"){
 						waitForPower = true;
 						out.println("Ready"); 
+						out.flush();
+					}
+					if(dialogue == "Need Loc"){
+						//Location Sending Procedure
 					}
 				}
             }
