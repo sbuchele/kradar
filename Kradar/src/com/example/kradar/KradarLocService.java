@@ -65,7 +65,7 @@ GooglePlayServicesClient.OnConnectionFailedListener,
         
         fluffy = new Fluffles();
         //Put the phone's ID in fluffy's hat
-        fluffy.tophat.setPhone("3");
+        Fluffles.tophat.setPhone("3");
         fluffyThread = new Thread(fluffy);
         fluffyThread.start();
         
@@ -137,8 +137,8 @@ GooglePlayServicesClient.OnConnectionFailedListener,
                 Double.toString(arg0.getLongitude());
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
         
-        fluffy.tophat.setLat(arg0.getLatitude());
-        fluffy.tophat.setLon(arg0.getLongitude());
+        Fluffles.tophat.setLat(arg0.getLatitude());
+        Fluffles.tophat.setLon(arg0.getLongitude());
         fluffy.poke();
 	}
 
