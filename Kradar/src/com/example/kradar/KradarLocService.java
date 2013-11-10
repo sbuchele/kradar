@@ -63,6 +63,7 @@ GooglePlayServicesClient.OnConnectionFailedListener,
         
         fluffy = new Fluffles();
         //Put the phone's ID in fluffy's hat
+        fluffy.tophat.setPhone("3");
         fluffyThread = new Thread(fluffy);
         fluffyThread.start();
         
@@ -76,6 +77,7 @@ GooglePlayServicesClient.OnConnectionFailedListener,
         Context ctx = getApplicationContext();
 		prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
 		
+		//Grab Phone Number send to Serv.
 		//to do
 		SharedPreferences Phone = PreferenceManager.getDefaultSharedPreferences(this);
 		if (Phone.getString(PHONE_NUMBER, null) == "")
@@ -83,9 +85,10 @@ GooglePlayServicesClient.OnConnectionFailedListener,
 			Phone.edit().putString(PHONE_NUMBER, "");
 		}
 		
-		KradarLocService.fluffy.tophat.setPhone(Phone.getString(PHONE_NUMBER, ""));
-		//KradarLocService.fluffy.tophat.setPhone("3");
+		//KradarLocService.fluffy.tophat.setPhone(Phone.getString(PHONE_NUMBER, ""));
+		KradarLocService.fluffy.tophat.setPhone("3");
 		KradarLocService.fluffy.poke();
+		
 		
 		Toast.makeText(this, "created", Toast.LENGTH_SHORT).show();
     }
