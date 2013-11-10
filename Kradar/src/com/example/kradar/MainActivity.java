@@ -105,18 +105,18 @@ public class MainActivity extends FragmentActivity
 	{
 		super.onStart();
 
-<<<<<<< HEAD
-//		KradarLocService.fluffy.tophat.setPhone(getMyPhoneNumber());
-//		KradarLocService.fluffy.poke();
-=======
-		//KradarLocService.fluffy.tophat.setPhone(getMyPhoneNumber());
-		//KradarLocService.fluffy.poke();
->>>>>>> 85f9912627a98cc74871b8eb2f23e2eba8bf980c
-
-		//if(Fluffles.Messenger. == false)
-		//{
-
-		//}
+//<<<<<<< HEAD
+////		KradarLocService.fluffy.tophat.setPhone(getMyPhoneNumber());
+////		KradarLocService.fluffy.poke();
+//=======
+//		//KradarLocService.fluffy.tophat.setPhone(getMyPhoneNumber());
+//		//KradarLocService.fluffy.poke();
+//>>>>>>> 85f9912627a98cc74871b8eb2f23e2eba8bf980c
+//
+//		//if(Fluffles.Messenger. == false)
+//		//{
+//
+//		//}
 	}
 
 
