@@ -21,13 +21,23 @@ public class MainActivity extends FragmentActivity
 {
 
 	Controller c;
-	final public String PHONE_NUMBER = "com.example.kradar.PhoneNumber" ;
-		
+	final public static String PHONE_NUMBER = "com.example.kradar.PhoneNumber" ;
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		c=new Controller();
+		
+		SharedPreferences Phone1 = PreferenceManager.getDefaultSharedPreferences(this);
+		
+		if (Phone1.getString(PHONE_NUMBER, "").equals(""))
+		{				
+			Intent intent = new Intent(MainActivity.this, New.class);
+			MainActivity.this.startActivity(intent);
+					
+		}
 		
 		startService(new Intent(this, KradarLocService.class));
 		
@@ -53,18 +63,6 @@ public class MainActivity extends FragmentActivity
 	@Override
 	public void onStart()
 	{
-		SharedPreferences Phone = PreferenceManager.getDefaultSharedPreferences(this);
-		if (Phone.getString(PHONE_NUMBER, "") == "")
-		{	
-			//DialogFragment newFrag = new PopUp();
-			//newFrag.show(getSupportFragmentManager(), "");
-			
-			Intent intent = new Intent(MainActivity.this, New.class);
-			MainActivity.this.startActivity(intent);
-			Phone.edit().putString(PHONE_NUMBER, "");
-		
-		
-		}
 		
 		super.onStart();
 }
