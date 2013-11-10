@@ -13,6 +13,7 @@ public class Controller {
 
 	}/*/
 	public static SharedPreferences pref;
+	public static final String FRIEND_NO="com.example.kradar.friendNum";
 	
 	public static void setSharedPreferences(SharedPreferences prefer){
 		pref=prefer;

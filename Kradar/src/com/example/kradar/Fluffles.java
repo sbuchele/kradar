@@ -27,7 +27,7 @@ public class Fluffles implements Runnable {//Server/Client code
 	//public class Messenger implements Runnable{
 
 	@Override
-	 public void run() {
+	 public synchronized void run() {
         boolean connected;
         int port = 8888;
         String serverIpAddress = "TUMC.dyndns-free.com";
@@ -46,6 +46,7 @@ public class Fluffles implements Runnable {//Server/Client code
             System.out.println("Entering Fluffles Loop");
             //out.println("testestestest");
             while (connected) {
+            	wait(500);
             	out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket
                         .getOutputStream())), true);
             	in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -139,7 +140,7 @@ public class Fluffles implements Runnable {//Server/Client code
 	private synchronized void speakToggleOff(){
 		canSpeak = false;
 	}
-	public synchronized void poke(){
+	public void poke(){
 		System.out.println("Fluffles was poked");
 		while(toSpeak != null){
 			try {
@@ -167,7 +168,6 @@ public class Fluffles implements Runnable {//Server/Client code
 			sayLong = true;
 		}
 		pokeDone = false;
-		while(!pokeDone){
 			
 		}
 	}

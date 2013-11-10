@@ -1,6 +1,7 @@
 package com.example.kradar;
 
 import android.content.Intent;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
@@ -17,6 +18,12 @@ public class Throw extends FragmentActivity {
 		setContentView(R.layout.adder);
 		EditText entry=(EditText) findViewById(R.id.phone_number);
 		phoneNum=entry.getText().toString();
+		
+		String prev=Controller.pref.getString(Controller.FRIEND_NO, "");
+		prev+=" "+phoneNum;
+		Editor edit=Controller.pref.edit();
+		edit.putString(Controller.FRIEND_NO, prev);
+		edit.commit();
 		
 		Button b1 = (Button) findViewById(R.id.entor);
 		b1.setOnClickListener(Click1());

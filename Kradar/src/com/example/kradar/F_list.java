@@ -13,13 +13,14 @@ public class F_list extends FragmentActivity {
 		setContentView(R.layout.list);
 		
 		final ListView listview = (ListView) findViewById(R.id.friendList);
-		String magicList=null;//TODO
+		String magicList=Controller.pref.getString(Controller.FRIEND_NO, "");
 		Scanner read=new Scanner(magicList);
 		final ArrayList<String> list = new ArrayList<String>();
 		
 		while(read.hasNext()){
 			list.add(read.next());
 		}
+	    read.close();
 	    
 	    String[] values = new String[list.size()];
 	    for (int i=0; i < list.size(); i++) {
@@ -27,7 +28,15 @@ public class F_list extends FragmentActivity {
 	    }
 		
 		
-		
+	   /* listView.setOnItemClickListener(new OnItemClickListener() {
+	    	  @Override
+	    	  public void onItemClick(AdapterView<?> parent, View view,
+	    	    int position, long id) {
+	    	    Toast.makeText(getApplicationContext(),
+	    	      "Click ListItem Number " + position, Toast.LENGTH_LONG)
+	    	      .show();
+	    	  }
+	    	}); */
 		
 	
 	}

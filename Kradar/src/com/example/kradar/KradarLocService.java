@@ -142,7 +142,8 @@ GooglePlayServicesClient.OnConnectionFailedListener,
         fluffy.poke();
         
         int power=prefs.getInt(POWER, 0);
-        prefs.edit().putInt(POWER, power);///TODO get power information
+        prefs.edit().putInt(POWER, power);
+        prefs.edit().commit();///TODO get power information
 		}
 	}
 
