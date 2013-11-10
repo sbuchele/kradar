@@ -14,7 +14,7 @@ import android.util.Log;
 
 public class Fluffles implements Runnable {//Server/Client code
 
-	public Hats tophat = new Hats();
+	public static Hats tophat = new Hats();
 	private boolean canSpeak = true;
 	String toSpeak = null;
 	boolean sayNum = false;
@@ -26,7 +26,7 @@ public class Fluffles implements Runnable {//Server/Client code
 	//public class Messenger implements Runnable{
 
 	@Override
-	 public synchronized void run() {
+	 public void run() {
         boolean connected;
         int port = 8888;
         String serverIpAddress = "TUMC.dyndns-free.com";
@@ -93,7 +93,6 @@ public class Fluffles implements Runnable {//Server/Client code
 				}
                 else if(!hasStuff){
                 	if (!saidThing) {
-                		System.out.println("Fluffles did not say anything");
 						if (sayID) {
 							out.println("Have ID");
 							out.flush();
@@ -132,7 +131,8 @@ public class Fluffles implements Runnable {//Server/Client code
 	private synchronized void speakToggleOff(){
 		canSpeak = false;
 	}
-	public synchronized void poke(){
+	public void poke(){
+		System.out.println("Fluffles was poked");
 		while(toSpeak != null){
 			try {
 				this.wait(100);
