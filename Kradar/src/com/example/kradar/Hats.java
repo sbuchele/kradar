@@ -6,7 +6,7 @@ public class Hats
 	int damage;
 	String name;
 	int distance;
-	int phone;
+	String phone;
 	
 	public Hats()
 	{	
@@ -14,7 +14,7 @@ public class Hats
 		damage = -1;
 		name = "-1";
 		distance = -1;
-		phone = -1;
+		phone = "-1";
 	}
 
 	public boolean isNamer() {

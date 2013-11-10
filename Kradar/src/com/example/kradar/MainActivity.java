@@ -68,6 +68,10 @@ public class MainActivity extends FragmentActivity
 		setContentView(R.layout.activity_main);
 		c=new Controller();
 			 
+		//if(Fluffles.Messenger. == false)
+		//{
+			
+		//}
 		
 		//button creation and implementation
 		Button b1 = (Button) findViewById(R.id.attack);
