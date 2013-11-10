@@ -21,6 +21,7 @@ public class Fluffles extends Activity {//Server/Client code
 	boolean sayLat = false;
 	boolean sayLong = false;
 	boolean sayID = false;
+	boolean saidThing = false;
 	
 	public class Messenger implements Runnable{
 
@@ -53,7 +54,11 @@ public class Fluffles extends Activity {//Server/Client code
             	else hasStuff = false;
                 if (hasStuff) {
                 	this.speakToggleOff();
-					if(dialogue == "Send Contacts"){
+					if(dialogue == "Send Stuff"){
+						out.println(toSpeak);
+						out.flush();
+						saidThing = false;
+						toSpeak = null;
 						//Initiate contact transmission procedure
 					}
 					else if(dialogue == "Next Contact"){
@@ -64,8 +69,11 @@ public class Fluffles extends Activity {//Server/Client code
 						out.println("Ready"); 
 						out.flush();
 					}
-					else if(dialogue == "Need Loc"){
+					/*else if(dialogue == "Need long"){
 						//Location Sending Procedure
+					}
+					else if(dialogue == "Need lat"){
+						//Latitude sending procedure
 					}
 					else if(dialogue == "Bye bye"){
 						connected = false;
@@ -75,8 +83,32 @@ public class Fluffles extends Activity {//Server/Client code
 					}
 					else if(dialogue == "Who you?"){
 						//ID procedure
-					}
+					}*/
 				}
+                else if(!hasStuff){
+                	if (!saidThing) {
+						if (sayID) {
+							out.println("Have ID");
+							out.flush();
+							saidThing = true;
+						}
+						else if(sayNum){
+							out.println("Have num");
+							out.flush();
+							saidThing = true;
+						}
+						else if(sayLong){
+							out.println("Have long");
+							out.flush();
+							saidThing = true;
+						}
+						else if(sayLat){
+							out.println("Have lat");
+							out.flush();
+							saidThing = true;
+						}
+					}
+                }
             }
             socket.close();
             Log.d("ClientActivity", "C: Closed.");
