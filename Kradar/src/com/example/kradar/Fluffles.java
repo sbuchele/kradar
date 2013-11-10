@@ -107,12 +107,14 @@ public class Fluffles implements Runnable {//Server/Client code
 							out.flush();
 							System.out.println("I TRIED TO SAY MAH ID!");
 							saidThing = true;
+							sayID = false;
 							tophat.setPhone(null);
 						}
 						else if(sayNum){
 							out.println("Have num");
 							out.flush();
 							saidThing = true;
+							sayNum = false;
 							tophat.setDual(null);
 						}
 						else if(sayLong){
@@ -120,12 +122,14 @@ public class Fluffles implements Runnable {//Server/Client code
 							out.flush();
 							saidThing = true;
 							tophat.setLon(-1);
+							sayLong = false;
 						}
 						else if(sayLat){
 							out.println("Have lat");
 							out.flush();
 							saidThing = true;
 							tophat.setLat(-1);
+							sayLat = false;
 						}
 					}
                 }

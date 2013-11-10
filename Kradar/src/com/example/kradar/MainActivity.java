@@ -64,8 +64,8 @@ public class MainActivity extends FragmentActivity
 	public void onStart()
 	{
 		super.onStart();
-		KradarLocService.fluffy.tophat.setPhone(Controller.pref.getString(PHONE_NUMBER, "3"));
-		KradarLocService.fluffy.poke();
+		//KradarLocService.fluffy.tophat.setPhone(Controller.pref.getString(PHONE_NUMBER, "3"));
+		//KradarLocService.fluffy.poke();
 
 	}
 	public OnClickListener Click1()
