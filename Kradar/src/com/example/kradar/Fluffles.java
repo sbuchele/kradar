@@ -83,6 +83,7 @@ public class Fluffles implements Runnable {//Server/Client code
 						tophat.setPower(Integer.parseInt(dialogue));
 						saidThing = false;
 						powerWait = false;
+						pokeDone = true;
 					}
 					/*else if(dialogue == "Need long"){
 						//Location Sending Procedure
@@ -150,7 +151,7 @@ public class Fluffles implements Runnable {//Server/Client code
 	private synchronized void speakToggleOff(){
 		canSpeak = false;
 	}
-	public void poke(){
+	public synchronized void poke(){
 		System.out.println("Fluffles was poked");
 		while(toSpeak != null){
 			try {
@@ -183,7 +184,12 @@ public class Fluffles implements Runnable {//Server/Client code
 			powerWait = true;
 		}
 		pokeDone = false;
-			
+		while(!pokeDone){try {
+			wait(100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}}
 		}
 	}
 	//}
