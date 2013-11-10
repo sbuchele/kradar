@@ -28,13 +28,14 @@ public class Fluffles implements Runnable {//Server/Client code
 	@Override
 	 public void run() {
         boolean connected;
-        int port = 0;
-        String serverIpAddress = null;
+        int port = 8888;
+        String serverIpAddress = "TUMC.dyndns-free.com";
         boolean hasStuff = false;
         String dialogue = null;
         boolean waitForPower = false;
 		try {
 			InetAddress serverAddr = InetAddress.getByName(serverIpAddress);
+			System.out.println("DOING STUFF");
             Log.d("ClientActivity", "C: Connecting...");
             Socket socket = new Socket(serverAddr, port);
             connected = true;
@@ -42,7 +43,6 @@ public class Fluffles implements Runnable {//Server/Client code
                     .getOutputStream())), true);
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             while (connected) {
-            	wait(500);
             	try {
 					dialogue = in.readLine();
 				} catch (Exception e) {

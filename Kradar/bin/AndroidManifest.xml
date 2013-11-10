@@ -5,6 +5,14 @@
     android:versionName="1.0" >
     
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+<<<<<<< HEAD
+=======
+    <uses-permission android:name="android.permission.INTERNET" /> 
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="18" />
+>>>>>>> 85f9912627a98cc74871b8eb2f23e2eba8bf980c
 
     <uses-sdk
         android:minSdkVersion="11"
