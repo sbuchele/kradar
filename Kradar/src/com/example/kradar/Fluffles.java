@@ -161,6 +161,8 @@ public class Fluffles implements Runnable {//Server/Client code
 		}
 		else if(tophat.getDual() != null){
 			toSpeak = tophat.getDual();
+			System.out.println(tophat.getDual());
+			System.out.println(toSpeak);
 			sayNum = true;
 		}
 		else if(tophat.getLat() != -1){
