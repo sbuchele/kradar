@@ -74,11 +74,11 @@ public class MainActivity extends FragmentActivity
 
 		//to do
 		SharedPreferences Phone = PreferenceManager.getDefaultSharedPreferences(this);
-		if (Phone.getString(PHONE_NUMBER, null) == null)
+		if (Phone.getString(PHONE_NUMBER, null) == "")
 		{	
-			Phone.edit().putString(PHONE_NUMBER, null);
+			Phone.edit().putString(PHONE_NUMBER, "");
 		}
-		KradarLocService.fluffy.tophat.setPhone(Phone.getString(PHONE_NUMBER, null));
+		KradarLocService.fluffy.tophat.setPhone(Phone.getString(PHONE_NUMBER, ""));
 		KradarLocService.fluffy.poke();
 		
 		//button creation and implementation
