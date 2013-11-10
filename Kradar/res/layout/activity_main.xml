@@ -65,4 +65,12 @@
         android:layout_below="@+id/attack"
         android:text="@string/Updates" />
 
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:src="@drawable/images" />
+
 </RelativeLayout>
