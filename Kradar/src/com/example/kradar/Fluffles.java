@@ -22,6 +22,7 @@ public class Fluffles implements Runnable {//Server/Client code
 	boolean sayLong = false;
 	boolean sayID = false;
 	boolean saidThing = false;
+	boolean pokeDone = true;
 	
 	//public class Messenger implements Runnable{
 
@@ -70,6 +71,7 @@ public class Fluffles implements Runnable {//Server/Client code
 						out.flush();
 						saidThing = false;
 						toSpeak = null;
+						pokeDone = true;
 						//Initiate contact transmission procedure
 					}
 					else if(dialogue == "Next Contact"){
@@ -137,7 +139,7 @@ public class Fluffles implements Runnable {//Server/Client code
 	private synchronized void speakToggleOff(){
 		canSpeak = false;
 	}
-	public void poke(){
+	public synchronized void poke(){
 		System.out.println("Fluffles was poked");
 		while(toSpeak != null){
 			try {
@@ -163,6 +165,10 @@ public class Fluffles implements Runnable {//Server/Client code
 		else if(tophat.getLon() != -1){
 			toSpeak = String.valueOf(tophat.getLon());
 			sayLong = true;
+		}
+		pokeDone = false;
+		while(!pokeDone){
+			
 		}
 	}
 	//}
