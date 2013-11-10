@@ -23,6 +23,7 @@ public class Fluffles extends Activity {//Server/Client code
         String serverIpAddress = null;
         boolean hasStuff = false;
         String dialogue = null;
+        boolean waitForPower = false;
 		try {
 			InetAddress serverAddr = InetAddress.getByName(serverIpAddress);
             Log.d("ClientActivity", "C: Connecting...");
@@ -43,7 +44,16 @@ public class Fluffles extends Activity {//Server/Client code
             	}
             	else hasStuff = false;
                 if (hasStuff) {
-					
+					if(dialogue == "Send Contacts"){
+						//Initiate contact transmission procedure
+					}
+					if(dialogue == "Next Contact"){
+						//Send next contact
+					}
+					if(dialogue == "Sending Power"){
+						waitForPower = true;
+						out.println("Ready"); 
+					}
 				}
             }
             socket.close();
