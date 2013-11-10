@@ -92,8 +92,8 @@ public class Fluffles implements Runnable {//Server/Client code
 					}*/
 				}
                 else if(!hasStuff){
-                	System.out.println("Fluffles did not have stuff");
                 	if (!saidThing) {
+                		System.out.println("Fluffles did not say anything");
 						if (sayID) {
 							out.println("Have ID");
 							out.flush();
