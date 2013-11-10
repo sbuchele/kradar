@@ -18,7 +18,7 @@ protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Phone = Controller.pref;
 		setContentView(R.layout.adder);
-		EditText entry=(EditText) findViewById(R.id.phone_number);
+		EditText entry=(EditText) findViewById(R.id.new_info);
 		phoneNum=entry.getText().toString();
 		
 		Button b1 = (Button) findViewById(R.id.entor);
