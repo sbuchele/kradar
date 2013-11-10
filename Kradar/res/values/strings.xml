@@ -6,7 +6,7 @@
 	<string name="introScreen">Welcome to Kradar, Kill enemies with your friends help</string>
  	<string name="Attack">ATTACK!</string>
  	<string name="Friends">Friends be here</string>
- 	<string name="Updates">ADD Friends</string>
+ 	<string name="Updates">Add Friends</string>
 	<string name="Charge">Charge Bar</string>
-	<string name="info_add">Please insert your friends phone number below</string>
+	<string name="info_add">Please insert your friend\'s phone number below</string>
 </resources>
