@@ -16,6 +16,7 @@ import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MotionEvent;
@@ -66,9 +67,11 @@ public class MainActivity extends FragmentActivity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		c=new Controller();
-
-		ArrayList<String> Hats = new ArrayList<String>();
 			 
+		//if(Fluffles.Messenger. == false)
+		//{
+			
+		//}
 		
 		//button creation and implementation
 		Button b1 = (Button) findViewById(R.id.attack);
@@ -77,6 +80,7 @@ public class MainActivity extends FragmentActivity
 		b1.setOnClickListener(Click1());
 		b2.setOnClickListener(Click2());
 		b3.setOnClickListener(Click3());
+		
 	}
 
 
@@ -87,7 +91,12 @@ public class MainActivity extends FragmentActivity
 		return true;
 	}
 
-
+	@Override
+	public void onStart()
+	{
+		super.onStart();
+		startService(new Intent(this, KradarLocService.class));
+	}
 
 
 //	/*
@@ -254,6 +263,12 @@ public class MainActivity extends FragmentActivity
 			
 		};
 		return click;
+	}
+
+	public String getMyPhoneNumber()
+	{
+	    return ((TelephonyManager) getSystemService(TELEPHONY_SERVICE))
+	            .getLine1Number();
 	}
 	
 }

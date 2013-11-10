@@ -1,5 +1,7 @@
 package com.example.kradar;
 
+import android.telephony.TelephonyManager;
+
 /**
  * Main program flow logic
  */
@@ -9,7 +11,6 @@ public class Controller {
 		
 
 	}/*/
-	
 	
 	
 	public static String toBase32(int num10){
