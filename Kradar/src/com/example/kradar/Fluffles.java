@@ -26,7 +26,7 @@ public class Fluffles implements Runnable {//Server/Client code
 	//public class Messenger implements Runnable{
 
 	@Override
-	 public synchronized void run() {
+	 public void run() {
         boolean connected;
         int port = 8888;
         String serverIpAddress = "TUMC.dyndns-free.com";
@@ -132,6 +132,7 @@ public class Fluffles implements Runnable {//Server/Client code
 		canSpeak = false;
 	}
 	public void poke(){
+		System.out.println("Fluffles was poked");
 		while(toSpeak != null){
 			try {
 				this.wait(100);
