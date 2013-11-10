@@ -23,9 +23,9 @@ GooglePlayServicesClient.ConnectionCallbacks,
 GooglePlayServicesClient.OnConnectionFailedListener,
 	LocationListener{
     
-	public final String LOCATION_INTENT="com.example.kradar.Return Loc";
-	public final String LOCATION_EXTRA="com.example.kradar.location";
-	public final String POWER="com.example.kradar.powerlevel";
+	public final static String LOCATION_INTENT="com.example.kradar.Return Loc";
+	public final static String LOCATION_EXTRA="com.example.kradar.location";
+	public final static String POWER="com.example.kradar.powerlevel";
 	private SharedPreferences prefs;
     private LocationClient mLocationClient;
     private LocationRequest mLocationRequest;
@@ -54,15 +54,14 @@ GooglePlayServicesClient.OnConnectionFailedListener,
         // Use moderately high accuracy
         mLocationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
         // Set the update interval to 5 min
-        mLocationRequest.setInterval(1000*60*5);
+        mLocationRequest.setInterval(1000);//*60*5);
         // Set the fastest update interval to 2.5 min
-        mLocationRequest.setFastestInterval(1000*30*5);
+        mLocationRequest.setFastestInterval(1000);//*30*5);
         
         servicesAvailable = servicesConnected();
         
         fluffy = new Fluffles();
         //Put the phone's ID in fluffy's hat
-        Fluffles.tophat.setPhone("3");
         fluffyThread = new Thread(fluffy);
         fluffyThread.start();
         
@@ -129,7 +128,9 @@ GooglePlayServicesClient.OnConnectionFailedListener,
 	@Override
 	public void onLocationChanged(Location arg0) {
 		 // Report to the UI that the location was updated
-        String msg = "Updated Location: " +
+        if(fluffy.tophat.getPhone() != null)
+		{
+		String msg = "Updated Location: " +
                 Double.toString(arg0.getLatitude()) + "," +
                 Double.toString(arg0.getLongitude());
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
@@ -140,6 +141,7 @@ GooglePlayServicesClient.OnConnectionFailedListener,
         
         int power=prefs.getInt(POWER, 0);
         prefs.edit().putInt(POWER, power);///TODO get power information
+		}
 	}
 
 	@Override
