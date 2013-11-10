@@ -2,6 +2,7 @@ package com.example.kradar;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient;
+import com.google.android.gms.common.GooglePlayServicesUtil;
 
 import android.location.Location;
 
@@ -12,8 +13,10 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MotionEvent;
+import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity implements
 GooglePlayServicesClient.ConnectionCallbacks,
@@ -145,7 +148,6 @@ LocationListener  {
     public void onConnected(Bundle dataBundle) {
         // Display the connection status
         Toast.makeText(this, "Connected", Toast.LENGTH_SHORT).show();
-
     }
     
     /*
