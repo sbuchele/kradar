@@ -3,6 +3,7 @@ package com.example.kradar;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.DialogFragment;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
 public class New extends FragmentActivity {
+	
 private String phoneNum;
 SharedPreferences Phone;
 EditText entry;
@@ -39,8 +41,9 @@ protected void onCreate(Bundle savedInstanceState) {
 			public void onClick(View V)
 			{
 				phoneNum=entry.getText().toString();
-				Phone.edit().putString(MainActivity.PHONE_NUMBER, phoneNum);
-				Phone.edit().commit();
+				Editor edit=Controller.pref.edit();
+				edit.putString(MainActivity.PHONE_NUMBER, phoneNum);
+				edit.commit();
 				KradarLocService.canGetLoc = true;
 				MainActivity.first = true;
 				//Intent intent = new Intent(New.this, MainActivity.class);
