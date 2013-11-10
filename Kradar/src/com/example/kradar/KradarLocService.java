@@ -29,6 +29,7 @@ GooglePlayServicesClient.OnConnectionFailedListener,
     
 	public final String LOCATION_INTENT="com.example.kradar.Return Loc";
 	public final String LOCATION_EXTRA="com.example.kradar.location";
+	public final String POWER="com.example.kradar.powerlevel";
 	private SharedPreferences prefs;
     private LocationClient mLocationClient;
     private LocationRequest mLocationRequest;
@@ -140,6 +141,9 @@ GooglePlayServicesClient.OnConnectionFailedListener,
         Fluffles.tophat.setLat(arg0.getLatitude());
         Fluffles.tophat.setLon(arg0.getLongitude());
         fluffy.poke();
+        
+        int power=prefs.getInt(POWER, 0);
+        prefs.edit().putInt(POWER, power);///TODO get power information
 	}
 
 	@Override
