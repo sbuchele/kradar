@@ -28,7 +28,7 @@ public class Fluffles implements Runnable {//Server/Client code
 	@Override
 	 public void run() {
         boolean connected;
-        int port = 0;
+        int port = 8888;
         String serverIpAddress = "TUMC.dyndns-free.com";
         boolean hasStuff = false;
         String dialogue = null;
